@@ -25,7 +25,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="bg-background-dark text-white">
+    <div className="hidden md:flex bg-background-dark text-white">
       <div className="flex flex-wrap justify-center lg:gap-12 w-fit mx-auto">
         <div className="flex flex-wrap items-center gap-5 py-3.5">
           {contact.map(({ Icon, text }) => (

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import {
   Carousel,
@@ -9,6 +11,7 @@ import {
 import Image from 'next/image';
 import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const items = [
   {
@@ -37,7 +40,13 @@ const items = [
 const Hero = () => {
   return (
     <div className="w-auto mx-auto">
-      <Carousel>
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 4000,
+          }),
+        ]}
+      >
         <CarouselContent>
           {items.map((item) => (
             <CarouselItem key={item.id} className="relative">
@@ -49,10 +58,10 @@ const Hero = () => {
                 className="w-full h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-black/40 bg-opacity-50 flex flex-col items-center justify-center px-6">
-                <h1 className="text-white text-5xl font-bold my-5">
+                <h1 className="text-white text-3xl text-center md:text-5xl font-bold my-5">
                   {item.title}
                 </h1>
-                <p className="text-white text-2xl text-center max-w-3xl">
+                <p className="text-white text-lg md:text-2xl text-center max-w-3xl">
                   {item.text}
                 </p>
                 {/* <Button className="p-5 text-xl">{item.btn}</Button> */}

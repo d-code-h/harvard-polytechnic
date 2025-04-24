@@ -12,30 +12,7 @@ import Image from 'next/image';
 import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
 import Autoplay from 'embla-carousel-autoplay';
-
-const items = [
-  {
-    id: 1,
-    image: '/images/hero-1.png',
-    title: 'Achieving Your Dreams Through Education',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ullam culpa earum nisi fuga cumque officiis ex recusandae tempore, alias asperiores consequuntur commodi, error explicabo adipisci officia quod nobis natus?',
-    btn: 'Get Started',
-  },
-  {
-    id: 2,
-    image: '/images/hero-1.png',
-    title: 'Your Path to Success Starts Here',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ullam culpa earum nisi fuga cumque officiis ex recusandae tempore, alias asperiores consequuntur commodi, error explicabo adipisci officia quod nobis natus?',
-    btn: 'Get Started',
-  },
-  {
-    id: 3,
-    image: '/images/hero-1.png',
-    title: 'Unlock Your Potential with Our Programs',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ullam culpa earum nisi fuga cumque officiis ex recusandae tempore, alias asperiores consequuntur commodi, error explicabo adipisci officia quod nobis natus?',
-    btn: 'Get Started',
-  },
-];
+import { carouselItems } from '@/lib/data';
 
 const Hero = () => {
   return (
@@ -48,7 +25,7 @@ const Hero = () => {
         ]}
       >
         <CarouselContent>
-          {items.map((item) => (
+          {carouselItems.map((item) => (
             <CarouselItem key={item.id} className="relative">
               <Image
                 src={item.image}
@@ -76,8 +53,8 @@ const Hero = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-6" />
-        <CarouselNext className="right-6" />
+        <CarouselPrevious className="left-6 hidden md:flex" />
+        <CarouselNext className="right-6 hidden md:flex" />
       </Carousel>
     </div>
   );

@@ -14,9 +14,15 @@ const Header = () => {
   const pathname = usePathname();
   return (
     <header className="flex flex-wrap flex-1 flex-row md:gap justify-between lg:justify-center items-center p-4 md:gap-5 lg:gap-0">
-      <div className="flex items-center">
-        <Image src="/icons/logo.png" alt="Logo" width={100} height={100} />
-        <h1 className="tracking-wider font-extrabold font-serif uppercase text-4xl -ms-3">
+      <div className="flex items-center gap-2">
+        <Image
+          src="/icons/logo.png"
+          alt="Logo"
+          width={100}
+          height={100}
+          className="size-12 sm:size-20"
+        />
+        <h1 className="tracking-wider font-extrabold font-serif uppercase text-2xl  md:text-4xl -ms-3">
           Harvard
         </h1>
       </div>
@@ -29,7 +35,7 @@ const Header = () => {
               key={index}
               variant="link"
               asChild
-              className="text-background-dark rounded-full"
+              className="text-dark rounded-full"
             >
               <Link
                 href={href}

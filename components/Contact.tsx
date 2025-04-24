@@ -25,7 +25,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="hidden md:flex bg-background-dark text-white">
+    <div className="hidden md:flex bg-dark text-white">
       <div className="flex flex-wrap justify-center lg:gap-12 w-fit mx-auto">
         <div className="flex flex-wrap items-center gap-5 py-3.5">
           {contact.map(({ Icon, text }) => (
@@ -37,10 +37,10 @@ const Contact = () => {
         </div>
         <div className="bg-tertiary flex items-center gap-5 px-9 py-4">
           {/* <Image src={facebook} alt="Logo" width={28} height={28} /> */}
-          <Facebook className="text-background-dark" />
-          <Instagram className="text-background-dark" />
-          <Linkedin className="text-background-dark" />
-          <Youtube className="text-background-dark" />
+          <Facebook className="text-dark" />
+          <Instagram className="text-dark" />
+          <Linkedin className="text-dark" />
+          <Youtube className="text-dark" />
         </div>
       </div>
     </div>

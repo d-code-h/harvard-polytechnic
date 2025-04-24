@@ -1,3 +1,5 @@
+import { Mail, MapPin, Phone } from 'lucide-react';
+
 export const links = [
   {
     href: '/',
@@ -94,5 +96,20 @@ export const courseCategories = [
     icon: '/icons/categories/category-9.svg',
     text: 'Video & Photgraphy',
     color: '#00A9ED',
+  },
+];
+
+export const contact = [
+  {
+    Icon: Phone,
+    text: '(+234) 813 532 5674',
+  },
+  {
+    Icon: Mail,
+    text: 'info@harvardpolytechnic.edu.ng',
+  },
+  {
+    Icon: MapPin,
+    text: 'No 15, Onireke road, Agbabiaka Area, Ilorin Kwara',
   },
 ];

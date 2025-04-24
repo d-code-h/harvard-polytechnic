@@ -40,7 +40,7 @@ const Header = () => {
               <Link
                 href={href}
                 className={cn(
-                  pathname.includes(href)
+                  pathname === href
                     ? 'border rounded-b-full border-primary text-primary'
                     : null,
                 )}

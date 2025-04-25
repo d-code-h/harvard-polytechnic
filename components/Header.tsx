@@ -6,7 +6,7 @@ import { Button } from './ui/button';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { ArrowRight } from 'lucide-react';
+import CustomButton from './CustomButton';
 
 const links = [
   {
@@ -68,13 +68,7 @@ const Header = () => {
           ))}
         </nav>
 
-        <Button className="w-auto h-auto px-5 rounded-full">
-          <span className="text-base">Create Account</span>
-
-          <div className="rounded-full bg-primary-light p-5">
-            <ArrowRight />
-          </div>
-        </Button>
+        <CustomButton text="Create Account" />
       </div>
     </header>
   );

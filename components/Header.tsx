@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import CustomButton from './CustomButton';
-import MobileNav from './MobileNav';
 import { links } from '@/lib/data';
 
 const Header = () => {

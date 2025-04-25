@@ -6,8 +6,7 @@ import { Button } from './ui/button';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { ArrowRight } from 'lucide-react';
-import MobileNav from './MobileNav';
+import CustomButton from './CustomButton';
 import { links } from '@/lib/data';
 
 const Header = () => {
@@ -50,19 +49,8 @@ const Header = () => {
             </Button>
           ))}
         </nav>
-      </div>
-      <Button className="w-auto h-auto px-5 rounded-full hidden md:flex md:order-2 lg:order-3">
-        <span className="text-base">Create Account</span>
 
-        <div className="rounded-full bg-primary-light p-5">
-          <ArrowRight />
-        </div>
-      </Button>
-
-      {/* Mobile Navigation */}
-
-      <div className="md:hidden">
-        <MobileNav />
+        <CustomButton text="Create Account" />
       </div>
     </header>
   );

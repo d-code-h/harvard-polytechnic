@@ -1,11 +1,13 @@
 import Categories from '@/components/Categories';
 import Hero from '@/components/Hero';
+import Profile from '@/components/Profile';
 
 export default function Home() {
   return (
     <main>
       <Hero />
       <Categories />
+      <Profile />
     </main>
   );
 }

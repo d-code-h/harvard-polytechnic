@@ -1,12 +1,10 @@
+import Hero from '@/components/global/Hero';
 import React from 'react';
-import Navigation from '../../components/Header';
 
 const AboutUs = () => {
   return (
     <div>
-      <h1>About Us</h1>
-
-      <Navigation />
+      <Hero title="About Us" />
     </div>
   );
 };

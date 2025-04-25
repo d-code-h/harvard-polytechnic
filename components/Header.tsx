@@ -7,58 +7,41 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import CustomButton from './CustomButton';
-
-const links = [
-  {
-    href: '/',
-    label: 'Home',
-  },
-  {
-    href: '/about-us',
-    label: 'About Us',
-  },
-  {
-    href: '/courses',
-    label: 'Courses',
-  },
-  {
-    href: '/pages',
-    label: 'Pages',
-  },
-  {
-    href: '/blog',
-    label: 'Blog',
-  },
-  {
-    href: '/contact',
-    label: 'Contact',
-  },
-];
+import MobileNav from './MobileNav';
+import { links } from '@/lib/data';
 
 const Header = () => {
   const pathname = usePathname();
   return (
-    <header className="flex gap-20 justify-center items-center p-4">
-      <div className="flex items-center">
-        <Image src="/icons/logo.png" alt="Logo" width={100} height={100} />
-        <h1 className="tracking-wider font-extrabold font-serif uppercase text-4xl -ms-3">
+    <header className="flex flex-wrap flex-1 flex-row md:gap justify-between lg:justify-center items-center p-4 md:gap-5 lg:gap-0">
+      <div className="flex items-center gap-2">
+        <Image
+          src="/icons/logo.png"
+          alt="Logo"
+          width={100}
+          height={100}
+          className="size-12 sm:size-20"
+        />
+        <h1 className="tracking-wider font-extrabold font-serif uppercase text-2xl  md:text-4xl -ms-3">
           Harvard
         </h1>
       </div>
-      <div className="flex flex-wrap lg:gap-40 items-center">
-        <nav>
+
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex flex-wrap items-center md:order-3 lg:order-2 mx-auto">
+        <nav className="max-lg:mb-5">
           {links.map(({ href, label }, index) => (
             <Button
               key={index}
               variant="link"
               asChild
-              className="text-background-dark rounded-full"
+              className="text-dark rounded-full"
             >
               <Link
                 href={href}
                 className={cn(
-                  pathname.includes(href)
-                    ? 'border rounded-bl-full border-primary text-primary'
+                  pathname === href
+                    ? 'border rounded-b-full border-primary text-primary'
                     : null,
                 )}
               >

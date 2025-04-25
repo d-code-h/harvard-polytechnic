@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 const Profile = () => {
   return (
-    <div className="bg-white p-28">
+    <div className="bg-white px-14 md:px-14 py-28">
       <div className="flex flex-col lg:flex-row gap-20 xl:w-10/12 mx-auto">
-        <div className="flex gap-5 items-center  sm:max-w-[400px] xl:max-w-[500px] mx-auto">
+        <div className="flex gap-5 items-center w-auto md:max-w-[400px] xl:max-w-[500px] mx-auto">
           <Image
             src="/images/profile-1.png"
             alt="Profile"
@@ -15,7 +15,7 @@ const Profile = () => {
             className="max-sm:w-1/2"
           />
 
-          <div className="space-y-5">
+          <div className="space-y-5 w-1/2">
             <div className="text-[#C4C4C4] flex flex-col items-center justify-center border-2 border-red-500 border-dashed p-6">
               <div className="font-bold w-24 h-24 rounded-full bg-white flex items-center justify-center text-[#FE543D] text-3xl border">
                 35+
@@ -27,6 +27,7 @@ const Profile = () => {
               alt="Profile"
               width={318}
               height={303}
+              className="h-24"
             />
           </div>
         </div>

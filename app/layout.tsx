@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Sora, Epilogue } from 'next/font/google';
 import './globals.css';
 import Contact from '@/components/Contact';
+import Header from '@/components/Header';
 
 const sora = Sora({
   variable: '--font-sora',
@@ -28,6 +29,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${sora.variable} ${epilogue.variable} antialiased`}>
         <Contact />
+        <Header />
+
         {children}
       </body>
     </html>

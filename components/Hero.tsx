@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import {
   Carousel,
@@ -9,37 +11,21 @@ import {
 import Image from 'next/image';
 import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
-
-const items = [
-  {
-    id: 1,
-    image: '/images/hero-1.png',
-    title: 'Achieving Your Dreams Through Education',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ullam culpa earum nisi fuga cumque officiis ex recusandae tempore, alias asperiores consequuntur commodi, error explicabo adipisci officia quod nobis natus?',
-    btn: 'Get Started',
-  },
-  {
-    id: 2,
-    image: '/images/hero-1.png',
-    title: 'Your Path to Success Starts Here',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ullam culpa earum nisi fuga cumque officiis ex recusandae tempore, alias asperiores consequuntur commodi, error explicabo adipisci officia quod nobis natus?',
-    btn: 'Get Started',
-  },
-  {
-    id: 3,
-    image: '/images/hero-1.png',
-    title: 'Unlock Your Potential with Our Programs',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ullam culpa earum nisi fuga cumque officiis ex recusandae tempore, alias asperiores consequuntur commodi, error explicabo adipisci officia quod nobis natus?',
-    btn: 'Get Started',
-  },
-];
+import Autoplay from 'embla-carousel-autoplay';
+import { carouselItems } from '@/lib/data';
 
 const Hero = () => {
   return (
     <div className="w-auto mx-auto">
-      <Carousel>
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 4000,
+          }),
+        ]}
+      >
         <CarouselContent>
-          {items.map((item) => (
+          {carouselItems.map((item) => (
             <CarouselItem key={item.id} className="relative">
               <Image
                 src={item.image}
@@ -49,10 +35,10 @@ const Hero = () => {
                 className="w-full h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-black/40 bg-opacity-50 flex flex-col items-center justify-center px-6">
-                <h1 className="text-white text-5xl font-bold my-5">
+                <h1 className="text-white text-3xl text-center md:text-5xl font-bold my-5">
                   {item.title}
                 </h1>
-                <p className="text-white text-2xl text-center max-w-3xl">
+                <p className="text-white text-lg md:text-2xl text-center max-w-3xl">
                   {item.text}
                 </p>
                 {/* <Button className="p-5 text-xl">{item.btn}</Button> */}
@@ -67,8 +53,8 @@ const Hero = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-6" />
-        <CarouselNext className="right-6" />
+        <CarouselPrevious className="left-6 hidden md:flex" />
+        <CarouselNext className="right-6 hidden md:flex" />
       </Carousel>
     </div>
   );

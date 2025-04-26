@@ -35,7 +35,7 @@ const Hero = () => {
                 className="w-full h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-black/40 bg-opacity-50 flex flex-col items-center justify-center px-6">
-                <h1 className="text-white text-3xl text-center md:text-5xl font-bold my-5">
+                <h1 className="text-white text-3xl text-center md:text-5xl font-poppins font-bold my-5">
                   {item.title}
                 </h1>
                 <p className="text-white text-lg md:text-2xl text-center max-w-3xl">

@@ -4,30 +4,32 @@ import Image from 'next/image';
 
 const Profile = () => {
   return (
-    <div className="bg-white px-14 md:px-14 py-28">
-      <div className="flex flex-col lg:flex-row gap-20 xl:w-10/12 mx-auto">
-        <div className="flex gap-5 items-center w-auto md:max-w-[400px] xl:max-w-[500px] mx-auto">
+    <div className="bg-white px-5  md:px-14 py-8 md:py-12">
+      <div className="flex flex-col md:flex-row gap-20 xl:w-10/12 mx-auto ">
+        <div className="flex flex-col md:flex-row gap-5 items-center w-auto md:max-w-[390px] lg:max-w-[470px] mx-auto ">
           <Image
             src="/images/profile-1.png"
             alt="Profile"
             width={230}
-            height={500}
-            className="max-sm:w-1/2"
+            height={700}
+            className="max-md:w-full max-md:hidden h-[390px]  object-cover object-top"
           />
 
-          <div className="space-y-5 w-1/2">
-            <div className="text-[#C4C4C4] flex flex-col items-center justify-center border-2 border-red-500 border-dashed p-6">
+          <div className="flex flex-col sm:flex-row flex-1 flex-wrap gap-5 w-full md:w-1/2">
+            <div className="text-[#C4C4C4] flex flex-col items-center justify-center gap-2 border-2 border-red-500 border-dashed p-4 md:p-6 w-full  ">
               <div className="font-bold w-24 h-24 rounded-full bg-white flex items-center justify-center text-[#FE543D] text-3xl border">
                 35+
               </div>
-              <p className="text-[#4D5756]">Years Experience</p>
+              <p className="text-[#4D5756] whitespace-nowrap">
+                Years Experience
+              </p>
             </div>
             <Image
               src="/images/profile-2.png"
               alt="Profile"
               width={318}
               height={303}
-              className="h-24"
+              className="h-48 w-full lg:w-64 lg:h-64 object-cover object-top"
             />
           </div>
         </div>
@@ -43,7 +45,7 @@ const Profile = () => {
             <h6 className="uppercase text-sm text-[#FE543D]">About Us</h6>
           </div>
 
-          <h2 className="text-5xl mt-6 mb-7 font-bold">
+          <h2 className="text-5xl md:text-4xl mt-6 mb-7 font-bold font-poppins">
             Benefit from our online learning expertise earn{' '}
             <span className="text-[#FE543D] font-bold">professional</span>
           </h2>

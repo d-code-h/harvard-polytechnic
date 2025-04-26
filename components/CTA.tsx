@@ -5,14 +5,14 @@ import Social from './Social';
 const CTA = () => {
   return (
     <div className="relative">
-      <div className="md:w-10/12 mx-auto pt-24 pb-2 flex items-center justify-between flex-col md:flex-row gap-10 px-5 md:px-14">
+      <div className="lg:w-10/12 mx-auto pt-12 md:pt-24 pb-2 flex items-center justify-between flex-col md:flex-row gap-6 md:gap-10 px-5 md:px-14">
         <section className="flex-1">
           <h6 className="text-tertiary font-semibold text-2xl">
             Join Our New Session
           </h6>
 
-          <h2 className="font-epilogue font-semibold text-6xl text-white mt-7 flex flex-col gap-3 z-50">
-            <div>Call To Enroll Your Child</div>
+          <h2 className="font-epilogue font-semibold text-2xl md:text-3xl  lg:text-4xl xl:text-5xl text-white mt-7 flex flex-col gap-3 z-50">
+            <div className="whitespace-nowrap">Call To Enroll Your Child</div>
             <div>(+234)813 842 3452</div>
           </h2>
         </section>
@@ -26,7 +26,7 @@ const CTA = () => {
           alt="star icon"
           width={49}
           height={49}
-          className="absolute bottom-16 left-2/3 translate-1/2 opacity-75"
+          className="absolute bottom-16 left-2/3 md:left-1/2 lg:left-7/12 translate-1/2 opacity-50"
         />
       </div>
 

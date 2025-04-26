@@ -1,0 +1,44 @@
+import Image from 'next/image';
+import React from 'react';
+import Social from './Social';
+
+const CTA = () => {
+  return (
+    <div className="relative">
+      <div className="md:w-10/12 mx-auto pt-24 pb-2 flex items-center justify-between flex-col md:flex-row gap-10 px-5 md:px-14">
+        <section className="flex-1">
+          <h6 className="text-tertiary font-semibold text-2xl">
+            Join Our New Session
+          </h6>
+
+          <h2 className="font-epilogue font-semibold text-6xl text-white mt-7 flex flex-col gap-3 z-50">
+            <div>Call To Enroll Your Child</div>
+            <div>(+234)813 842 3452</div>
+          </h2>
+        </section>
+
+        <Social variant="ghost" />
+      </div>
+
+      <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[#0E2A46] opacity-85">
+        <Image
+          src="/icons/star.svg"
+          alt="star icon"
+          width={49}
+          height={49}
+          className="absolute bottom-16 left-2/3 translate-1/2 opacity-75"
+        />
+      </div>
+
+      <Image
+        src="/images/cta-bg.png"
+        alt="cta background"
+        width={1000}
+        height={1000}
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 -z-20"
+      />
+    </div>
+  );
+};
+
+export default CTA;

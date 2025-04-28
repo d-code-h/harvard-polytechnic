@@ -1,29 +1,7 @@
 import React from 'react';
 import CustomButton from './CustomButton';
 import TeamCard from './TeamCard';
-
-const teams = [
-  {
-    name: 'Esther Howard',
-    position: 'Junior Instructor',
-    src: '/images/teams/team-1.png',
-  },
-  {
-    name: 'Beverly Hathcock',
-    position: 'Junior Instructor',
-    src: '/images/teams/team-2.png',
-  },
-  {
-    name: 'Donald Gonzales',
-    position: 'Junior Instructor',
-    src: '/images/teams/team-3.png',
-  },
-  {
-    name: 'Eddie Lenz',
-    position: 'Junior Instructor',
-    src: '/images/teams/team-4.png',
-  },
-];
+import { teams } from '@/lib/data';
 
 const Teams = () => {
   return (

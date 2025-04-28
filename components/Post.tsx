@@ -2,16 +2,9 @@ import Image from 'next/image';
 import React from 'react';
 import CustomButton from './CustomButton';
 
-interface PostProps {
-  src: string;
-  date: string;
-  comments: string;
-  text: string;
-}
-
 const Post = (post: PostProps) => {
   return (
-    <div className="bg-[#EFEFEF] rounded-lg max-md:mx-auto p-7">
+    <div className="bg-[#EFEFEF] rounded-lg max-md:mx-auto p-7 hover:shadow-lg transition-all duration-100 ease-in-out hover:border-2 border-dark">
       <Image
         src={post.src}
         alt="post"

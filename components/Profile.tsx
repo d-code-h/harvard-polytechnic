@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <div className="bg-white px-5  md:px-14 py-8 md:py-12">
       <div className="flex flex-col md:flex-row gap-20 xl:w-10/12 mx-auto ">
-        <div className="flex flex-col md:flex-row gap-5 items-center w-auto md:max-w-[390px] lg:max-w-[470px] mx-auto ">
+        <div className="flex flex-col md:flex-row gap-5 items-center w-auto md:max-w-[390px] lg:max-w-[470px] mx-auto">
           <Image
             src="/images/profile-1.png"
             alt="Profile"
@@ -15,8 +15,16 @@ const Profile = () => {
             className="max-md:w-full max-md:hidden h-[390px]  object-cover object-top"
           />
 
-          <div className="flex flex-col sm:flex-row flex-1 flex-wrap gap-5 w-full md:w-1/2">
-            <div className="text-[#C4C4C4] flex flex-col items-center justify-center gap-2 border-2 border-red-500 border-dashed p-4 md:p-6 w-full  ">
+          <div className="flex flex-col sm:flex-row md:flex-col flex-1 md:gap-5 w-full md:w-1/2">
+            <div className="relative text-[#C4C4C4] flex flex-col items-center justify-center gap-2 p-4 md:p-6 w-full">
+              <div className="absolute top-0 left-0 w-2 h-2 bg-red-500"></div>
+              <div className="absolute top-1 left-0 w-full h-0.5 border-t border-dashed border-red-500"></div>
+              <div className="absolute top-0 right-0 w-2 h-2 bg-red-500"></div>
+              <div className="absolute top-1 left-0.5 w-0.5 h-full border-r border-dashed border-red-500"></div>
+              <div className="absolute bottom-0 left-0 w-2 h-2 bg-red-500"></div>
+              <div className="absolute bottom-0.5 left-0 w-full h-0.5 border-t border-dashed border-red-500"></div>
+              <div className="absolute bottom-0 right-0 w-2 h-2 bg-red-500"></div>
+              <div className="absolute top-1 right-0.5 w-0.5 h-full border-l border-dashed border-red-500"></div>
               <div className="font-bold w-24 h-24 rounded-full bg-white flex items-center justify-center text-[#FE543D] text-3xl border">
                 35+
               </div>
@@ -29,7 +37,7 @@ const Profile = () => {
               alt="Profile"
               width={318}
               height={303}
-              className="h-48 w-full lg:w-64 lg:h-64 object-cover object-top"
+              className="h-48 md:w-full lg:w-64 lg:h-64 object-cover object-top"
             />
           </div>
         </div>

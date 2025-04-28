@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ChevronRightCircle, Share2 } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 
@@ -12,19 +12,29 @@ const TeamCard = ({
   src: string;
 }) => {
   return (
-    <div className="relative">
-      <Image src={src} alt={name} width={380} height={380} />
-      <div className="absolute bottom-2 w-full">
-        <div className="bg-white w-fit mx-auto">
+    <div className="relative w-fit h-fit border-8 rounded-xl border-primary bg-primary">
+      <Image
+        src={src}
+        alt={name}
+        width={370}
+        height={368}
+        className="w-[355px] h-[360px] object-cover "
+      />
+      <div className="absolute bottom-6 w-full px-2 lg:px-1 xl:px-3">
+        <div className="bg-white mx-auto px-6 md:px-4 lg:px-6 py-4 rounded-lg flex items-center justify-between gap-auto">
           <section>
-            <h6>{name}</h6>
-            <p>{position}</p>
+            <h6 className="text-dark font-epilogue text-xl font-bold whitespace-nowrap">
+              {name}
+            </h6>
+            <p className="py-1 text-primary text-sm">{position}</p>
           </section>
-          <div>
-            <ArrowRight />
-            <div className="w-6 h-6 -ml-3 bg-primary/50 rounded-full"></div>
+          <div className="flex items-center">
+            <ChevronRightCircle size={32} className="text-primary" />
           </div>
         </div>
+      </div>
+      <div className="p-2 bg-primary rounded-full absolute top-4 right-4 flex items-center justify-center">
+        <Share2 size={24} className="text-white" />
       </div>
     </div>
   );

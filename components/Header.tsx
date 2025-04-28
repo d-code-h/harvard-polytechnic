@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import CustomButton from './CustomButton';
 import { links } from '@/lib/data';
+import MobileNav from './MobileNav';
 
 const Header = () => {
   const pathname = usePathname();
@@ -52,6 +53,9 @@ const Header = () => {
 
         <CustomButton text="Create Account" />
       </div>
+
+      {/* Mobile Navigation */}
+      <MobileNav />
     </header>
   );
 };

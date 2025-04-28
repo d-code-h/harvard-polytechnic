@@ -29,7 +29,7 @@ const Teams = () => {
   return (
     <div className="max-md:p-5 flex flex-col gap-12 xl:gap-16 items-center justify-between lg:flex-row md:w-11/12 mx-auto my-12">
       {/* Left Section */}
-      <div className="w-full lg:w-1/3 xl:w-2/6 xl:flex-1">
+      <div className="w-full lg:w-1/3 xl:w-2/6 2xl:flex-1">
         <div className="space-y-7">
           <section className="space-y-4">
             <h6 className="text-primary text-sm bg-primary/25 px-3 py-2 uppercase w-fit rounded-lg">

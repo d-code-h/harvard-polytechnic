@@ -1,5 +1,5 @@
 import { contact } from '@/lib/data';
-import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+import Social from './Social';
 
 const Contact = () => {
   return (
@@ -13,13 +13,7 @@ const Contact = () => {
             </div>
           ))}
         </div>
-        <div className="bg-tertiary flex items-center gap-5 px-9 py-4">
-          {/* <Image src={facebook} alt="Logo" width={28} height={28} /> */}
-          <Facebook className="text-dark" />
-          <Instagram className="text-dark" />
-          <Linkedin className="text-dark" />
-          <Youtube className="text-dark" />
-        </div>
+        <Social variant="solid" />
       </div>
     </div>
   );

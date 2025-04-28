@@ -113,3 +113,47 @@ export const contact = [
     text: 'No 15, Onireke road, Agbabiaka Area, Ilorin Kwara',
   },
 ];
+
+export const PostsData = [
+  {
+    src: '/images/posts/post-1.png',
+    date: '14 June 2023',
+    comments: '06',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.',
+  },
+  {
+    src: '/images/posts/post-1.png',
+    date: '14 June 2023',
+    comments: '06',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.',
+  },
+  {
+    src: '/images/posts/post-3.png',
+    date: '14 April 2025',
+    comments: '06',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.',
+  },
+];
+
+export const teams = [
+  {
+    name: 'Esther Howard',
+    position: 'Junior Instructor',
+    src: '/images/teams/team-1.png',
+  },
+  {
+    name: 'Beverly Hathcock',
+    position: 'Junior Instructor',
+    src: '/images/teams/team-2.png',
+  },
+  {
+    name: 'Donald Gonzales',
+    position: 'Junior Instructor',
+    src: '/images/teams/team-3.png',
+  },
+  {
+    name: 'Eddie Lenz',
+    position: 'Junior Instructor',
+    src: '/images/teams/team-4.png',
+  },
+];

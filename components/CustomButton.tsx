@@ -1,13 +1,19 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
+import clsx from 'clsx';
 
-const CustomButton = ({ text }: { text: string }) => {
+const CustomButton = ({ text, styles, arrowStyles }: CustomButtonProps) => {
   return (
-    <Button className="w-auto h-auto px-5 rounded-full">
+    <Button className={'w-auto h-auto px-5 rounded-full ' + styles}>
       <span className="text-base">{text}</span>
 
-      <div className="rounded-full bg-primary-light p-5">
+      <div
+        className={clsx(
+          'rounded-full t p-5',
+          arrowStyles ? arrowStyles : 'bg-primary-light',
+        )}
+      >
         <ArrowRight />
       </div>
     </Button>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Profile = () => {
   return (
     <div className="bg-white px-5  md:px-14 py-8 md:py-12">
-      <div className="flex flex-col md:flex-row gap-20 xl:w-10/12 mx-auto ">
+      <div className="flex flex-col md:flex-row gap-12 md:gap-20 xl:w-10/12 mx-auto ">
         <div className="flex flex-col md:flex-row gap-5 items-center w-auto md:max-w-[390px] lg:max-w-[470px] mx-auto">
           <Image
             src="/images/profile-1.png"
@@ -37,7 +37,7 @@ const Profile = () => {
               alt="Profile"
               width={318}
               height={303}
-              className="h-48 md:w-full lg:w-64 lg:h-64 object-cover object-top"
+              className="max-sm:h-auto h-64 md:w-full lg:w-64 lg:h-64 object-cover object-top"
             />
           </div>
         </div>

@@ -157,3 +157,123 @@ export const teams = [
     src: '/images/teams/team-4.png',
   },
 ];
+
+export const teamsData = {
+  heading: 'Our Team',
+  title: 'Meet Our Dedicated Faculty and Staff',
+  description:
+    'At Harvard Polytechnic, our team of experienced educators and professionals is committed to providing quality education and fostering a supportive learning environment for all students.',
+  buttonText: 'View All Members',
+};
+
+export const galleryImages = [
+  '/images/gallery/gallery-1.png',
+  '/images/gallery/gallery-2.png',
+  '/images/gallery/gallery-3.png',
+  '/images/gallery/gallery-4.png',
+  '/images/gallery/gallery-5.png',
+  '/images/gallery/gallery-6.png',
+];
+
+export const quickLinks = [
+  {
+    title: 'Admissions Process',
+    href: '/admissions',
+  },
+  {
+    title: 'Academic Programs',
+    href: '/academics',
+  },
+  {
+    title: 'News & Events',
+    href: '/news',
+  },
+  {
+    title: 'Contact Us',
+    href: '/contact',
+  },
+  {
+    title: 'Privacy Policy',
+    href: '/privacy-policy',
+  },
+];
+
+export const services = [
+  {
+    title: 'Engineering Programs',
+    href: '/academics#engineering',
+  },
+  {
+    title: 'Business Administration',
+    href: '/academics#business-administration',
+  },
+  {
+    title: 'Computer Science',
+    href: '/academics#computer-science',
+  },
+  {
+    title: 'Mass Communication',
+    href: '/academics#mass-communication',
+  },
+  {
+    title: 'Health Sciences',
+    href: '/academics#health-sciences',
+  },
+];
+
+export const profileData = {
+  aboutUs: {
+    heading: 'About Us',
+    title: 'Shaping the Future with Quality Education',
+    description:
+      'At Harvard Polytechnic, we are committed to providing innovative learning experiences that empower students to achieve their dreams and make a difference in the world.',
+    mission: {
+      title: 'Our Mission:',
+      text: 'To deliver world-class education that fosters innovation, leadership, and excellence in a dynamic and inclusive environment.',
+    },
+    vision: {
+      title: 'Our Vision:',
+      text: 'To be a leading institution recognized globally for academic excellence and impactful contributions to society.',
+    },
+    buttonText: 'Apply Now',
+  },
+  stats: {
+    yearsOfExcellence: '10+',
+  },
+};
+
+export const ctaData = {
+  heading: 'Join Our New Session',
+  title: 'Call To Enroll',
+  phone: '(+234) 813 842 3452',
+  backgroundImage: '/images/cta-bg.png',
+  starIcon: '/icons/star.svg',
+};
+
+export const footerData = {
+  logo: {
+    src: '/icons/logo.png',
+    alt: 'Harvard Polytechnic Logo',
+    name: 'Harvard',
+    subName: 'Polytechnic',
+  },
+  description:
+    'Harvard Polytechnic is dedicated to providing quality education and fostering innovation, leadership, and excellence in a dynamic learning environment.',
+  socialIcons: [
+    {
+      Icon: 'Facebook',
+      bgColor: '#E9E2FF',
+      className: 'text-primary fill-primary',
+    },
+    { Icon: 'Instagram', bgColor: '#E9E2FF', className: 'text-primary' },
+    {
+      Icon: 'Twitter',
+      bgColor: '#E9E2FF',
+      className: 'text-primary fill-primary',
+    },
+  ],
+  servicesHeading: 'Explore Our Programs:',
+  quickLinksHeading: 'Quick Links:',
+  galleryHeading: 'Campus Life Gallery',
+  copyright: 'Copyright © 2025 Harvard Polytechnic || Excellence in Education',
+};

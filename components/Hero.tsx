@@ -41,7 +41,6 @@ const Hero = () => {
                 <p className="text-white text-lg md:text-2xl text-center max-w-3xl">
                   {item.text}
                 </p>
-                {/* <Button className="p-5 text-xl">{item.btn}</Button> */}
                 <Button className="w-auto h-auto px-5 rounded-full mt-5">
                   <span className="text-base">{item.btn}</span>
 

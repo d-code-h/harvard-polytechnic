@@ -34,8 +34,8 @@ const Post = (post: PostProps) => {
       </p>
       <div className="flex flex-col gap-5">
         <CustomButton
-          styles="bg-[#E9E2FF] text-primary w-fit"
-          arrowStyles="bg-[#E3DBFF]"
+          styles="bg-[#E9E2FF] group text-primary hover:text-white w-fit"
+          arrowStyles="bg-[#E3DBFF] group-hover:text-primary"
           text="Read More"
         />
       </div>

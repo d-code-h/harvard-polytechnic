@@ -4,15 +4,15 @@ import Image from 'next/image';
 
 const Profile = () => {
   return (
-    <div className="bg-white px-5  md:px-14 py-8 md:py-12">
-      <div className="flex flex-col md:flex-row gap-12 md:gap-20 xl:w-10/12 mx-auto ">
+    <div className="bg-white px-5 md:px-14 py-8 md:py-12">
+      <div className="flex flex-col md:flex-row gap-12 md:gap-20 xl:w-10/12 mx-auto">
         <div className="flex flex-col md:flex-row gap-5 items-center w-auto md:max-w-[390px] lg:max-w-[470px] mx-auto">
           <Image
             src="/images/profile-1.png"
             alt="Profile"
             width={230}
             height={700}
-            className="max-md:w-full max-md:hidden h-[390px]  object-cover object-top"
+            className="max-md:w-full max-md:hidden h-[390px] object-cover object-top"
           />
 
           <div className="flex flex-col sm:flex-row md:flex-col flex-1 md:gap-5 w-full md:w-1/2">
@@ -26,10 +26,10 @@ const Profile = () => {
               <div className="absolute bottom-0 right-0 w-2 h-2 bg-red-500"></div>
               <div className="absolute top-1 right-0.5 w-0.5 h-full border-l border-dashed border-red-500"></div>
               <div className="font-bold w-24 h-24 rounded-full bg-white flex items-center justify-center text-[#FE543D] text-3xl border">
-                35+
+                50+
               </div>
               <p className="text-[#4D5756] whitespace-nowrap">
-                Years Experience
+                Years of Excellence
               </p>
             </div>
             <Image
@@ -46,7 +46,7 @@ const Profile = () => {
           <div className="flex items-center">
             <Image
               src="/icons/about-us.svg"
-              alt="Profile"
+              alt="About Us"
               width={23}
               height={17}
             />
@@ -54,12 +54,13 @@ const Profile = () => {
           </div>
 
           <h2 className="text-5xl md:text-4xl mt-6 mb-7 font-bold font-poppins">
-            Benefit from our online learning expertise earn{' '}
-            <span className="text-[#FE543D] font-bold">professional</span>
+            Shaping the Future with{' '}
+            <span className="text-[#FE543D] font-bold">Quality Education</span>
           </h2>
           <p className="text-[#4D5756] text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore.
+            At Harvard Polytechnic, we are committed to providing innovative
+            learning experiences that empower students to achieve their dreams
+            and make a difference in the world.
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 lg:gap-8 mt-8 mb-9">
@@ -68,22 +69,23 @@ const Profile = () => {
                 Our Mission:
               </h4>
               <p className="text-[#333931] tracking-wider">
-                Suspendisse ultrice gravida dictum fusce placerat ultricies
-                integer quis auctor elit sed vulputate mi sit.
+                To deliver world-class education that fosters innovation,
+                leadership, and excellence in a dynamic and inclusive
+                environment.
               </p>
             </section>
             <section className="space-y-4">
               <h4 className="uppercase text-[#0E2A46] font-bold">
-                Our Vission:
+                Our Vision:
               </h4>
               <p className="text-[#333931] tracking-wider">
-                Suspendisse ultrice gravida dictum fusce placerat ultricies
-                integer quis auctor elit sed vulputate mi sit.
+                To be a leading institution recognized globally for academic
+                excellence and impactful contributions to society.
               </p>
             </section>
           </div>
 
-          <CustomButton text="Admission Open" />
+          <CustomButton text="Apply Now" />
         </section>
       </div>
     </div>

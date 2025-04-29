@@ -17,37 +17,39 @@ const MobileNav = () => {
   const pathname = usePathname();
 
   return (
-    <Sheet>
-      <SheetTrigger>
-        <Button variant="ghost">
-          <Menu className="size-7" />
-        </Button>
-      </SheetTrigger>
-      <SheetContent>
-        <SheetHeader>
-          <SheetTitle>Harvard</SheetTitle>
-        </SheetHeader>
-        <nav className="mt-4">
-          <ul className="space-y-2">
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={cn(
-                    'block px-4 py-2 text-lg font-medium rounded-md transition-colors',
-                    pathname.includes(link.href)
-                      ? 'bg-primary-light text-white'
-                      : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900',
-                  )}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </SheetContent>
-    </Sheet>
+    <div className="md:hidden">
+      <Sheet>
+        <SheetTrigger>
+          <Button variant="ghost">
+            <Menu className="size-7" />
+          </Button>
+        </SheetTrigger>
+        <SheetContent>
+          <SheetHeader>
+            <SheetTitle>Harvard</SheetTitle>
+          </SheetHeader>
+          <nav className="mt-4">
+            <ul className="space-y-2">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      'block px-4 py-2 text-lg font-medium rounded-md transition-colors',
+                      pathname.includes(link.href)
+                        ? 'bg-primary-light text-white'
+                        : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900',
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </SheetContent>
+      </Sheet>
+    </div>
   );
 };
 

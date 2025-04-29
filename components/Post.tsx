@@ -4,7 +4,7 @@ import CustomButton from './CustomButton';
 
 const Post = (post: PostProps) => {
   return (
-    <div className="bg-[#EFEFEF] rounded-lg max-md:mx-auto p-7 hover:shadow-lg transition-all duration-100 ease-in-out hover:border-2 border-dark">
+    <div className="bg-[#EFEFEF] rounded-lg max-md:mx-auto p-7 hover:shadow-lg transition-all duration-100 ease-in-out hover:border-1 border-dark">
       <Image
         src={post.src}
         alt="post"

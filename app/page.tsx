@@ -1,5 +1,6 @@
 import Categories from '@/components/Categories';
 import CTA from '@/components/CTA';
+import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Posts from '@/components/Posts';
 import Profile from '@/components/Profile';
@@ -14,6 +15,7 @@ export default function Home() {
       <CTA />
       <Team />
       <Posts />
+      <Footer />
     </main>
   );
 }

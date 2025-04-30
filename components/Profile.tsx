@@ -2,13 +2,14 @@ import React from 'react';
 import CustomButton from './CustomButton';
 import Image from 'next/image';
 import { profileData } from '../lib/data';
+import Container from './Container';
 
 const Profile = () => {
   const { aboutUs, stats } = profileData;
 
   return (
-    <div className="bg-white px-5 md:px-14 py-8 md:py-12">
-      <div className="flex flex-col md:flex-row gap-12 md:gap-20 xl:w-10/12 mx-auto">
+    <Container>
+      <div className="bg-white flex flex-col md:flex-row gap-12 md:gap-20 mx-auto">
         <div className="flex flex-col md:flex-row gap-5 items-center w-auto md:max-w-[390px] lg:max-w-[470px] mx-auto">
           <Image
             src="/images/profile-1.png"
@@ -80,7 +81,7 @@ const Profile = () => {
           <CustomButton text={aboutUs.buttonText} />
         </section>
       </div>
-    </div>
+    </Container>
   );
 };
 

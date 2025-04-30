@@ -244,7 +244,7 @@ export const profileData = {
 
 export const ctaData = {
   heading: 'Join Our New Session',
-  title: 'Call To Enroll',
+  title: 'Call To Enroll  ',
   phone: '(+234) 813 842 3452',
   backgroundImage: '/images/cta-bg.png',
   starIcon: '/icons/star.svg',

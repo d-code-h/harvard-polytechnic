@@ -33,7 +33,7 @@ const Hero = () => {
                 alt="Slide"
                 width={1500}
                 height={900}
-                className="w-full h-[350px]  md:h-[600px] object-cover object-center"
+                className="w-full h-[600px] object-cover object-center"
               />
               <div className="absolute inset-0 bg-black/40 bg-opacity-50 flex flex-col items-center justify-center px-6">
                 <h1 className="text-white text-3xl text-center md:text-5xl font-poppins font-bold my-5">

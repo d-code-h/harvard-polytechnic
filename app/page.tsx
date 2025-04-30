@@ -1,4 +1,5 @@
 import Categories from '@/components/Categories';
+// import Courses from '@/components/Courses';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
@@ -11,6 +12,7 @@ export default function Home() {
     <main>
       <Hero />
       <Categories />
+      {/* <Courses /> */}
       <Profile />
       <CTA />
       <Team />

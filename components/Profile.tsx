@@ -12,7 +12,7 @@ const Profile = () => {
       <div className="bg-white flex flex-col md:flex-row gap-12 md:gap-20 mx-auto">
         <div className="flex flex-col md:flex-row gap-5 items-center w-auto md:max-w-[390px] lg:max-w-[470px] mx-auto">
           <Image
-            src="/images/profile-1.png"
+            src="/images/profile-1.jpg"
             alt="Profile"
             width={230}
             height={700}

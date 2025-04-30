@@ -30,7 +30,7 @@ export const links = [
 export const carouselItems = [
   {
     id: 1,
-    image: '/images/hero-1.png',
+    image: '/images/hero-1.jpg',
     title: 'Enroll in Our IJMB Program',
     text: 'Our IJMB form is out! Start your journey to higher education with our Interim Joint Matriculation Board program.',
     btn: 'Visit IJMB Page',
@@ -38,7 +38,7 @@ export const carouselItems = [
   },
   {
     id: 2,
-    image: '/images/hero-1.png',
+    image: '/images/hero-3.jpg',
     title: 'Innovative Learning for a Brighter Future',
     text: 'Our programs are designed to equip students with the skills and knowledge needed to excel in their careers.',
     btn: 'Explore Programs',
@@ -46,7 +46,7 @@ export const carouselItems = [
   },
   {
     id: 3,
-    image: '/images/hero-1.png',
+    image: '/images/hero-2.jpg',
     title: 'Join Our Vibrant Community',
     text: 'Be part of a diverse and inclusive community that fosters growth, innovation, and excellence.',
     btn: 'Get Started',
@@ -54,7 +54,7 @@ export const carouselItems = [
   },
   {
     id: 4,
-    image: '/images/hero-1.png',
+    image: '/images/hero-1.jpg',
     title: 'Empowering the Next Generation of Leaders',
     text: 'At Harvard Polytechnic, we provide quality education to shape the leaders of tomorrow. Join us to unlock your potential.',
     btn: 'Learn More',
@@ -148,24 +148,24 @@ export const PostsData = [
 
 export const teams = [
   {
-    name: 'Dr. Esther Howard',
+    name: 'Dr. Ajibade Obasanjo',
     position: 'Rector',
-    src: '/images/teams/team-1.png',
+    src: '/images/teams/team-1.jpg',
   },
   {
-    name: 'Prof. Beverly Hathcock',
-    position: 'Dean of Academics',
-    src: '/images/teams/team-2.png',
+    name: 'Dr. Ake Joseph Olusiji',
+    position: 'Registrar',
+    src: '/images/teams/team-2.jpg',
   },
   {
-    name: 'Mr. Donald Gonzales',
-    position: 'Head of Admissions',
-    src: '/images/teams/team-3.png',
+    name: 'Mrs. Ajibade Esther Taye',
+    position: 'Bursar',
+    src: '/images/teams/team-3.jpg',
   },
   {
-    name: 'Mrs. Eddie Lenz',
-    position: 'Director of Student Affairs',
-    src: '/images/teams/team-4.png',
+    name: 'Mr. Afolabi Victor',
+    position: 'Deputy Registrar',
+    src: '/images/teams/team-4.jpg',
   },
 ];
 

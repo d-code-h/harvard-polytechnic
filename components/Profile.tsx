@@ -14,9 +14,9 @@ const Profile = () => {
           <Image
             src="/images/profile-1.jpg"
             alt="Profile"
-            width={230}
-            height={700}
-            className="max-md:w-full max-md:hidden h-fit object-cover object-top"
+            width={500}
+            height={800}
+            className="max-md:w-full w-[230px] h[700px] max-md:hidden h-fit object-cover object-top"
           />
 
           <div className="flex flex-col sm:flex-row md:flex-col flex-1 md:gap-5 w-full md:w-1/2">
@@ -35,8 +35,8 @@ const Profile = () => {
             <Image
               src="/images/profile-2.jpg"
               alt="Profile"
-              width={318}
-              height={303}
+              width={500}
+              height={500}
               className="maxo h-64 md:w-full lg:w-64 lg:h-64 object-cover object-center md:object-top"
             />
           </div>

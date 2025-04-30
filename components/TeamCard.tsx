@@ -16,8 +16,8 @@ const TeamCard = ({
       <Image
         src={src}
         alt={name}
-        width={370}
-        height={368}
+        width={700}
+        height={700}
         className="w-[355px] h-[360px] object-cover "
       />
       <div className="absolute bottom-4 w-full px-2 sm:px-1 md:px-2 lg:px-1 xl:px-3">

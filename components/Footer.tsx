@@ -111,7 +111,7 @@ const Footer = () => {
           </div>
         </Container>
       </div>
-      <p className="text-base text-center text-white bg-[#222222] py-5">
+      <p className="text-base text-center text-white bg-[#222222] px-5 py-5">
         {copyright}
       </p>
     </div>

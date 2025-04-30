@@ -2,10 +2,11 @@ import React from 'react';
 import CustomButton from './CustomButton';
 import Post from './Post';
 import { PostsData } from '@/lib/data';
+import Container from './Container';
 
 const Posts = () => {
   return (
-    <div className="max-md:p-5 space-y-12 md:space-y-20 lg:flex-row md:w-11/12 xl:w-10/12 mx-auto py-8 md:py-12">
+    <Container>
       <div className="flex flex-wrap max-md:gap-2 items-center justify-between">
         <hgroup className="space-y-6">
           <h6 className="bg-[#E9E2FF] text-primary px-5 py-2 uppercase text-sm w-fit rounded-lg">
@@ -23,7 +24,7 @@ const Posts = () => {
           <Post key={post.src} {...post} />
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 

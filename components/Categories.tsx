@@ -2,15 +2,16 @@ import React from 'react';
 import { Button } from './ui/button';
 import Image from 'next/image';
 import { courseCategories } from '@/lib/data';
+import Container from './Container';
 
 const Categories = () => {
   return (
-    <div className="mb-8">
+    <Container>
       <h2 className="text-dark font-epilogue font-bold text-5xl text-center mt-16 mb-12">
         Browse By Categories
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-5 md:px-14">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {courseCategories.map((category) => (
           <Button
             key={category.text}
@@ -40,7 +41,7 @@ const Categories = () => {
           </Button>
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 

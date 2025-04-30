@@ -317,7 +317,7 @@ export const ijmbData = {
     heading: 'Ready to Join the IJMB Program?',
     chatButtonText: 'Chat to Apply',
     whatsappLink:
-      'https://wa.me/2347047730748?text=Hello, I am interested in applying for the IJMB program at Harvard Polytechnic.',
+      'https://wa.me/2349019921862?text=Hello, I am interested in applying for the IJMB program at Harvard Polytechnic.',
     details: [
       {
         title: 'Enrolled Students',

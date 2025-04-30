@@ -1,4 +1,3 @@
-'use client';
 import Container from '@/components/Container';
 import Footer from '@/components/Footer';
 import Hero from '@/components/global/Hero';
@@ -6,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import React from 'react';
 import { ijmbData } from '@/lib/data';
+import IJMBChatButton from '@/components/IJMBChatButton';
 
 const IJMB = () => {
   const { heroTitle, leftSection, rightSection } = ijmbData;
@@ -23,14 +23,14 @@ const IJMB = () => {
               alt={leftSection.image.alt}
               width={900}
               height={500}
-              className="mx-auto w-full object-cover h-[500px] object-top"
+              className="mx-auto w-full object-cover h-[250px] md:h-[500px] object-top"
             />
 
             <h2 className="font-epilogue font-bold text-3xl md:text-[45px] my-5 text-dark">
               {leftSection.heading}
             </h2>
 
-            <div className="space-x-3">
+            <div className="space-x-3 space-y-3">
               {leftSection.buttons.map((button, index) => (
                 <Button
                   key={index}
@@ -56,6 +56,7 @@ const IJMB = () => {
                       {paragraph}
                     </p>
                   ))}
+                  chatButtonText
                 </div>
               </section>
 
@@ -94,14 +95,7 @@ const IJMB = () => {
                   {rightSection.heading}
                 </h4>
 
-                <Button
-                  className="text-center text-lg py-6 my-3 w-full"
-                  onClick={() =>
-                    window.open(rightSection.whatsappLink, '_blank')
-                  }
-                >
-                  {rightSection.chatButtonText}
-                </Button>
+                <IJMBChatButton rightSection={rightSection} />
               </div>
             </div>
 

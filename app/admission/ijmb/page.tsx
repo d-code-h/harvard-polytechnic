@@ -23,14 +23,14 @@ const IJMB = () => {
               alt={leftSection.image.alt}
               width={900}
               height={500}
-              className="mx-auto w-full object-cover h-[500px] object-top"
+              className="mx-auto w-full object-cover h-[250px] md:h-[500px] object-top"
             />
 
             <h2 className="font-epilogue font-bold text-3xl md:text-[45px] my-5 text-dark">
               {leftSection.heading}
             </h2>
 
-            <div className="space-x-3">
+            <div className="space-x-3 space-y-3">
               {leftSection.buttons.map((button, index) => (
                 <Button
                   key={index}

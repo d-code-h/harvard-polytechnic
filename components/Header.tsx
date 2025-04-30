@@ -13,7 +13,7 @@ import MobileNav from './MobileNav';
 const Header = () => {
   const pathname = usePathname();
   return (
-    <header className="flex flex-wrap flex-1 justify-between items-center p-4 px-5 md:gap-5 lg:gap-0 bg-white shadow-md sticky top-0 z-50">
+    <header className="flex flex-wrap flex-1 justify-between items-center px-5 py-4 md:gap-5 lg:gap-0 bg-white shadow-md sticky top-0 z-50">
       <div className="flex items-center gap-2 lg:mx-auto xl:mx-0">
         <Image
           src="/icons/logo.png"

@@ -13,6 +13,7 @@ import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { carouselItems } from '@/lib/data';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -41,13 +42,15 @@ const Hero = () => {
                 <p className="text-white text-lg md:text-2xl text-center max-w-3xl">
                   {item.text}
                 </p>
-                <Button className="w-auto h-auto px-5 rounded-full mt-5">
-                  <span className="text-base">{item.btn}</span>
+                <Link href={item.href}>
+                  <Button className="w-auto h-auto px-5 rounded-full mt-5">
+                    <span className="text-base">{item.btn}</span>
 
-                  <div className="rounded-full bg-primary-light p-5">
-                    <ArrowRight />
-                  </div>
-                </Button>
+                    <div className="rounded-full bg-primary-light p-5">
+                      <ArrowRight />
+                    </div>
+                  </Button>
+                </Link>
               </div>
             </CarouselItem>
           ))}

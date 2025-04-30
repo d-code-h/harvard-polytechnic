@@ -31,9 +31,10 @@ export const carouselItems = [
   {
     id: 1,
     image: '/images/hero-1.png',
-    title: 'Empowering the Next Generation of Leaders',
-    text: 'At Harvard Polytechnic, we provide quality education to shape the leaders of tomorrow. Join us to unlock your potential.',
-    btn: 'Learn More',
+    title: 'Enroll in Our IJMB Program',
+    text: 'Our IJMB form is out! Start your journey to higher education with our Interim Joint Matriculation Board program.',
+    btn: 'Visit IJMB Page',
+    href: '/admission/ijmb',
   },
   {
     id: 2,
@@ -41,6 +42,7 @@ export const carouselItems = [
     title: 'Innovative Learning for a Brighter Future',
     text: 'Our programs are designed to equip students with the skills and knowledge needed to excel in their careers.',
     btn: 'Explore Programs',
+    href: '/about-us',
   },
   {
     id: 3,
@@ -48,6 +50,15 @@ export const carouselItems = [
     title: 'Join Our Vibrant Community',
     text: 'Be part of a diverse and inclusive community that fosters growth, innovation, and excellence.',
     btn: 'Get Started',
+    href: '#',
+  },
+  {
+    id: 4,
+    image: '/images/hero-1.png',
+    title: 'Empowering the Next Generation of Leaders',
+    text: 'At Harvard Polytechnic, we provide quality education to shape the leaders of tomorrow. Join us to unlock your potential.',
+    btn: 'Learn More',
+    href: '#',
   },
 ];
 

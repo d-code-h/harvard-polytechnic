@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomButton from './CustomButton';
+// import CustomButton from './CustomButton';
 import Post from './Post';
 import { PostsData } from '@/lib/data';
 import Container from './Container';

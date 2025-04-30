@@ -16,24 +16,28 @@ const Profile = () => {
             alt="Profile"
             width={230}
             height={700}
-            className="max-md:w-full max-md:hidden h-[390px] object-cover object-top"
+            className="max-md:w-full max-md:hidden h-fit object-cover object-top"
           />
 
           <div className="flex flex-col sm:flex-row md:flex-col flex-1 md:gap-5 w-full md:w-1/2">
             <div className="relative text-[#C4C4C4] flex flex-col items-center justify-center gap-2 p-4 md:p-6 w-full">
-              <div className="font-bold w-24 h-24 rounded-full bg-white flex items-center justify-center text-[#FE543D] text-3xl border">
+              <div className="absolute top-0 left-0 w-2 h-2 bg-[#FE543D]"></div>
+              <div className="absolute top-0 right-0 w-2 h-2 bg-[#FE543D]"></div>
+              <div className="absolute bottom-0 left-0 w-2 h-2 bg-[#FE543D]"></div>
+              <div className="absolute bottom-0 right-0 w-2 h-2 bg-[#FE543D]"></div>
+              <div className="font-bold p-4 rounded-full bg-white flex items-center justify-center text-[#FE543D] text-3xl border">
                 {stats.yearsOfExcellence}
               </div>
               <p className="text-[#4D5756] whitespace-nowrap">
-                Years of Excellence
+                Students Impacted
               </p>
             </div>
             <Image
-              src="/images/profile-2.png"
+              src="/images/profile-2.jpg"
               alt="Profile"
               width={318}
               height={303}
-              className="max-sm:h-auto h-64 md:w-full lg:w-64 lg:h-64 object-cover object-top"
+              className="maxo h-64 md:w-full lg:w-64 lg:h-64 object-cover object-center md:object-top"
             />
           </div>
         </div>

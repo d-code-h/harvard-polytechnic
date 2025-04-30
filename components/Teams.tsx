@@ -9,7 +9,7 @@ const Teams = () => {
 
   return (
     <Container>
-      <div className="flex flex-col gap-12 xl:gap-16 items-center justify-between lg:flex-row mx-auto my-12">
+      <div className="flex flex-col gap-12 lg:gap-3 xl:gap-16 items-center justify-between lg:flex-row mx-auto my-12">
         {/* Left Section */}
         <div className="w-full lg:w-1/3 xl:w-2/6 2xl:flex-1">
           <div className="space-y-7">
@@ -30,7 +30,7 @@ const Teams = () => {
         </div>
 
         {/* Right Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 justify-items-center w-full flex-1 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 sm:gap-3 md:gap-7 lg:gap-3 xl:gap-7 justify-items-center w-full flex-1 ">
           {teams.map((team) => (
             <TeamCard key={team.name} {...team} />
           ))}

@@ -249,7 +249,7 @@ export const profileData = {
     buttonText: 'Apply Now',
   },
   stats: {
-    yearsOfExcellence: '10+',
+    yearsOfExcellence: '1700+',
   },
 };
 

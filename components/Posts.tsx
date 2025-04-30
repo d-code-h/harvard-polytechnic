@@ -12,7 +12,7 @@ const Posts = () => {
           <h6 className="bg-[#E9E2FF] text-primary px-5 py-2 uppercase text-sm w-fit rounded-lg">
             Blog Post
           </h6>
-          <h3 className="font-epilogue font-bold text-5xl">
+          <h3 className="font-epilogue font-bold text-4xl  md:text-5xl">
             Most Popular Post.
           </h3>
         </hgroup>

@@ -1,130 +1,118 @@
+'use client';
 import Container from '@/components/Container';
 import Footer from '@/components/Footer';
 import Hero from '@/components/global/Hero';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import React from 'react';
-
-const ijmbDetails = [
-  {
-    title: 'Enrolled',
-    value: '100',
-  },
-  {
-    title: 'Lectures',
-    value: '80',
-  },
-  {
-    title: 'Language',
-    value: 'English',
-  },
-  {
-    title: 'Start Date',
-    value: 'May 2, 2025',
-  },
-  {
-    title: 'Duration',
-    value: '6 months',
-  },
-];
+import { ijmbData } from '@/lib/data';
 
 const IJMB = () => {
+  const { heroTitle, leftSection, rightSection } = ijmbData;
+
   return (
     <div>
-      <Hero title="IJMB" />
+      <Hero title={heroTitle} />
 
       <Container>
         <div className="flex flex-col lg:flex-row justify-between gap-16">
+          {/* Left Section */}
           <div className="flex-1">
             <Image
-              src="/images/ijmb.png"
-              alt="About IJMB"
+              src={leftSection.image.src}
+              alt={leftSection.image.alt}
               width={900}
               height={500}
               className="mx-auto w-full object-cover h-[500px] object-top"
             />
 
             <h2 className="font-epilogue font-bold text-3xl md:text-[45px] my-5 text-dark">
-              Web Development Fully Complete Guideline
+              {leftSection.heading}
             </h2>
 
             <div className="space-x-3">
-              <Button>Overview</Button>
-              <Button variant="secondary">Curriculum</Button>
-              <Button variant="secondary">Instructor</Button>
-              <Button variant="secondary">Review</Button>
+              {leftSection.buttons.map((button, index) => (
+                <Button
+                  key={index}
+                  variant={index === 0 ? 'default' : 'secondary'}
+                >
+                  {button}
+                </Button>
+              ))}
             </div>
 
             <div className="space-y-8 mt-12">
               <section>
                 <h4 className="uppercase my-3 font-epilogue font-bold text-xl text-dark">
-                  Course Description
+                  Program Description
                 </h4>
 
                 <div className="space-y-3">
-                  <p className="text-base text-dark tracking-wide">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim..
-                  </p>
-
-                  <p className="text-base text-dark tracking-wide">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum..
-                  </p>
+                  {leftSection.programDescription.map((paragraph, index) => (
+                    <p
+                      key={index}
+                      className="text-base text-dark tracking-wide"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
               </section>
 
               <section>
                 <h4 className="uppercase my-3 font-epilogue font-bold text-xl text-dark">
-                  What Will I Learn From This Course?
+                  What Will You Gain?
                 </h4>
 
-                <p className="text-base text-dark tracking-wide">
-                  Himenaeos. Vestibulum sollicitudin varius mauris non
-                  dignissim. Sed quis iaculis est. Nulla quam neque, interdum
-                  vitae fermentum lacinia, interdum eu magna. Mauris non posuere
-                  tellus. Donec quis euismod tellus. Nam vel lacus eu nisl
-                  bibendum accumsan vitae vitae nibh. Nam nec eros id magna
-                  hendrerit sagittis Nullam sed mi non odio feugiat volutpat sit
-                  amet nec elit. Maecenas id hendrerit ipsum
-                </p>
+                <ul className="list-disc ml-5 mt-3">
+                  {leftSection.whatYouGain.map((item, index) => (
+                    <li
+                      key={index}
+                      className="text-base text-dark tracking-wide"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </section>
             </div>
           </div>
 
+          {/* Right Section */}
           <div className="px-5 py-6 bg-[#E8E8F4] w-full lg:w-[350px] h-fit">
-            <Image
-              src="/images/ijmb-apply.png"
-              alt="Apply for IJMB"
-              width={300}
-              height={200}
-              className="w-full md:[300px] object-cover"
-            />
+            <div className="md:flex lg:block gap-6 items-center">
+              <Image
+                src={rightSection.image.src}
+                alt={rightSection.image.alt}
+                width={300}
+                height={200}
+                className="w-full md:w-[300px] object-cover"
+              />
 
-            <h4></h4>
+              <div>
+                <h4 className="font-epilogue font-bold text-xl text-dark my-4 text-center">
+                  {rightSection.heading}
+                </h4>
 
-            <Button className="text-center text-lg py-6 my-3">
-              Chat to Apply
-            </Button>
+                <Button
+                  className="text-center text-lg py-6 my-3 w-full"
+                  onClick={() =>
+                    window.open(rightSection.whatsappLink, '_blank')
+                  }
+                >
+                  {rightSection.chatButtonText}
+                </Button>
+              </div>
+            </div>
 
-            <ul className="space-y-5">
-              {ijmbDetails.map((each) => (
+            <ul className="space-y-5 mt-6">
+              {rightSection.details.map((detail, index) => (
                 <li
-                  key={each.title}
+                  key={index}
                   className="flex items-center justify-between text-base text-dark"
                 >
-                  <span>{each.title}</span>
-                  <span>{each.value}</span>
+                  <span>{detail.title}</span>
+                  <span>{detail.value}</span>
                 </li>
               ))}
             </ul>

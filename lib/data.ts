@@ -288,3 +288,57 @@ export const footerData = {
   galleryHeading: 'Campus Life Gallery',
   copyright: 'Copyright © 2025 Harvard Polytechnic || Excellence in Education',
 };
+
+export const ijmbData = {
+  heroTitle: 'IJMB Program',
+  leftSection: {
+    image: {
+      src: '/images/ijmb.png',
+      alt: 'About IJMB',
+    },
+    heading: 'Start Your Journey to Higher Education with IJMB',
+    buttons: ['Overview', 'Curriculum', 'Instructor', 'Review'],
+    programDescription: [
+      'The Interim Joint Matriculation Board (IJMB) program at Harvard Polytechnic, Ilorin, is a one-year advanced level program that provides an alternative route to gaining admission into Nigerian universities. It is designed to prepare students for academic excellence and success in their chosen fields.',
+      'Our IJMB program is fully accredited and recognized by Nigerian universities. With experienced instructors and a conducive learning environment, we ensure that students are well-prepared for their academic journey.',
+    ],
+    whatYouGain: [
+      'Comprehensive knowledge in your chosen subjects.',
+      'Access to experienced and dedicated instructors.',
+      'Preparation for direct entry admission into Nigerian universities.',
+      'Enhanced academic and personal development skills.',
+    ],
+  },
+  rightSection: {
+    image: {
+      src: '/images/ijmb-apply.png',
+      alt: 'Apply for IJMB',
+    },
+    heading: 'Ready to Join the IJMB Program?',
+    chatButtonText: 'Chat to Apply',
+    whatsappLink:
+      'https://wa.me/2347047730748?text=Hello, I am interested in applying for the IJMB program at Harvard Polytechnic.',
+    details: [
+      {
+        title: 'Enrolled Students',
+        value: '500+',
+      },
+      {
+        title: 'Lectures Per Week',
+        value: '80',
+      },
+      {
+        title: 'Language of Instruction',
+        value: 'English',
+      },
+      {
+        title: 'Start Date',
+        value: 'May 2, 2025',
+      },
+      {
+        title: 'Program Duration',
+        value: '6 months',
+      },
+    ],
+  },
+};

@@ -21,9 +21,9 @@ const IJMB = () => {
             <Image
               src={leftSection.image.src}
               alt={leftSection.image.alt}
-              width={900}
-              height={500}
-              className="mx-auto w-full object-cover h-[250px] md:h-[500px] object-top"
+              width={1000}
+              height={600}
+              className="mx-auto w-full object-cover h-[250px] md:h-[500px] object-center"
             />
 
             <h2 className="font-epilogue font-bold text-3xl md:text-[45px] my-5 text-dark">
@@ -85,9 +85,9 @@ const IJMB = () => {
               <Image
                 src={rightSection.image.src}
                 alt={rightSection.image.alt}
-                width={300}
-                height={200}
-                className="w-full md:w-[300px] object-cover"
+                width={400}
+                height={300}
+                className="w-full md:w-[300px] h-[200px] object-cover object-bottom"
               />
 
               <div>

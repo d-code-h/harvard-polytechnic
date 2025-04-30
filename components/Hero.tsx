@@ -25,7 +25,7 @@ const Hero = () => {
         }}
         plugins={[
           Autoplay({
-            delay: 4000,
+            delay: 6000,
           }),
         ]}
       >

@@ -22,8 +22,9 @@ const Header = () => {
           height={100}
           className="size-12 sm:size-20"
         />
-        <h1 className="tracking-wider font-extrabold font-serif uppercase text-xl sm:text-2xl md:text-4xl -ms-3">
-          Harvard
+        <h1 className="tracking-wider font-extrabold font-serif uppercase text-xl sm:text-2xl md:text-4xl -ms-3 flex flex-col">
+          <span>Harvard</span>
+          <span className="text-sm">Polytechnic</span>
         </h1>
       </div>
 

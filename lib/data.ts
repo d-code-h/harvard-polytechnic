@@ -105,7 +105,7 @@ export const courseCategories = [
 export const contact = [
   {
     Icon: Phone,
-    text: '(+234) 813 532 5674',
+    text: '(+234) 901 992 1862',
   },
   {
     Icon: Mail,
@@ -248,7 +248,7 @@ export const profileData = {
 export const ctaData = {
   heading: 'Join Our New Session',
   title: 'Call To Enroll  ',
-  phone: '(+234) 813 842 3452',
+  phone: '(+234) 901 992 1862',
   backgroundImage: '/images/cta-bg.png',
   starIcon: '/icons/star.svg',
 };
@@ -285,7 +285,7 @@ export const ijmbData = {
   heroTitle: 'IJMB Program',
   leftSection: {
     image: {
-      src: '/images/ijmb.png',
+      src: '/images/ijmb.jpg',
       alt: 'About IJMB',
     },
     heading: 'Start Your Journey to Higher Education with IJMB',
@@ -303,7 +303,7 @@ export const ijmbData = {
   },
   rightSection: {
     image: {
-      src: '/images/ijmb-apply.png',
+      src: '/images/ijmb-apply.jpg',
       alt: 'Apply for IJMB',
     },
     heading: 'Ready to Join the IJMB Program?',
@@ -317,7 +317,7 @@ export const ijmbData = {
       },
       {
         title: 'Lectures Per Week',
-        value: '80',
+        value: '10',
       },
       {
         title: 'Language of Instruction',
@@ -325,11 +325,11 @@ export const ijmbData = {
       },
       {
         title: 'Start Date',
-        value: 'May 2, 2025',
+        value: 'Already Started',
       },
       {
         title: 'Program Duration',
-        value: '6 months',
+        value: '12 months',
       },
     ],
   },

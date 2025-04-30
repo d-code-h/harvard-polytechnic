@@ -9,7 +9,7 @@ const Hero = ({ title }: { title: string }) => {
         alt="hero"
         width={1000}
         height={1000}
-        className="w-full h-fit object-cover"
+        className="w-full h-[200px] object-cover object-right md:object-center"
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <h1 className="text-dark text-3xl md:text-6xl text-center font-bold my-5 uppercase">

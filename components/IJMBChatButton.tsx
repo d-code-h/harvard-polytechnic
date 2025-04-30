@@ -2,18 +2,20 @@
 import React from 'react';
 import { Button } from './ui/button';
 
-const IJMBChatButton = ({ text }: { text: string }) => {
+const IJMBChatButton = ({
+  rightSection,
+}: {
+  rightSection: {
+    whatsappLink: string;
+    chatButtonText: string;
+  };
+}) => {
   return (
     <Button
       className="text-center text-lg py-6 my-3 w-full"
-      onClick={() =>
-        window.open(
-          'https://wa.me/2347047730748?text=Hello, I am interested in applying for the IJMB program at Harvard Polytechnic.',
-          '_blank',
-        )
-      }
+      onClick={() => window.open(rightSection.whatsappLink, '_blank')}
     >
-      {text}
+      {rightSection.chatButtonText}
     </Button>
   );
 };

@@ -14,11 +14,15 @@ import { ArrowRight } from 'lucide-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { carouselItems } from '@/lib/data';
 import Link from 'next/link';
+import clsx from 'clsx';
 
 const Hero = () => {
   return (
     <div className="w-auto mx-auto">
       <Carousel
+        opts={{
+          loop: true,
+        }}
         plugins={[
           Autoplay({
             delay: 4000,
@@ -26,16 +30,21 @@ const Hero = () => {
         ]}
       >
         <CarouselContent>
-          {carouselItems.map((item) => (
-            <CarouselItem key={item.id} className="relative">
+          {carouselItems.map((item, index) => (
+            <CarouselItem key={item.image} className="relative">
               <Image
                 src={item.image}
                 alt="Slide"
-                width={1500}
-                height={900}
-                className="w-full h-[600px] object-cover"
+                width={1300}
+                height={800}
+                className={clsx('w-full h-[600px] object-cover object-center')}
               />
-              <div className="absolute inset-0 bg-black/40 bg-opacity-50 flex flex-col items-center justify-center px-6">
+              <div
+                className={clsx(
+                  'absolute inset-0 flex flex-col items-center justify-center px-6',
+                  index === 2 ? 'bg-black/25' : 'bg-black/35',
+                )}
+              >
                 <h1 className="text-white text-3xl text-center md:text-5xl font-poppins font-bold my-5">
                   {item.title}
                 </h1>

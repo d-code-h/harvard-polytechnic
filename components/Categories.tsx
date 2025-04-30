@@ -21,7 +21,7 @@ const Categories = () => {
             }}
           >
             <div
-              className={`p-3 lg:p-5 rounded-full border border-[${category.color}]`}
+              className={`p-3 lg:p-4 rounded-full border border-[${category.color}]`}
               style={{
                 backgroundColor: category.color + '2A',
                 border: '2px solid ' + category.color,
@@ -32,10 +32,10 @@ const Categories = () => {
                 alt={category.text}
                 width={40}
                 height={40}
-                className="w-10 h-10"
+                className="w-10 h-10 lg:w-8 lg:h-8"
               />
             </div>
-            <span className="text-dark font-epilogue font-bold text-base lg:text-xl whitespace-break-spaces">
+            <span className="text-dark font-epilogue font-bold text-base lg:text-xl whitespace-break-spaces text-left">
               {category.text}
             </span>
           </Button>

@@ -8,9 +8,9 @@ const Post = (post: PostProps) => {
       <Image
         src={post.src}
         alt="post"
-        width={360}
+        width={500}
         height={200}
-        className="w-full object-cover rounded-lg"
+        className="w-full h-[200px] object-cover object-center rounded-lg"
       />
       <div className="flex flex-wrap items-center gap-6 mt-6">
         <h6 className="flex items-center gap-2">

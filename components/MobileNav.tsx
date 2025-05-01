@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { links } from '@/lib/data';
+import Image from 'next/image';
 
 const MobileNav = () => {
   const pathname = usePathname();
@@ -28,7 +29,21 @@ const MobileNav = () => {
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>
-            <SheetTitle>Harvard</SheetTitle>
+            <SheetTitle>
+              <div className="flex items-center gap-2 lg:mx-auto xl:mx-0">
+                <Image
+                  src="/icons/logo.png"
+                  alt="Logo"
+                  width={100}
+                  height={100}
+                  className="size-12 sm:size-20"
+                />
+                <h1 className="tracking-wider font-extrabold font-serif uppercase text-xl sm:text-2xl md:text-4xl -ms-3 flex flex-col">
+                  <span>Harvard</span>
+                  <span className="text-sm">Polytechnic</span>
+                </h1>
+              </div>
+            </SheetTitle>
           </SheetHeader>
           <nav className="mt-4">
             <ul className="space-y-2">

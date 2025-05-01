@@ -5,7 +5,6 @@ import Image from 'next/image';
 import React from 'react';
 import { ijmbData } from '@/lib/data';
 import IJMBChatButton from '@/components/IJMBChatButton';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const IJMB = () => {
   const { heroTitle, leftSection, rightSection } = ijmbData;

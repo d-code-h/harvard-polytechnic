@@ -30,7 +30,7 @@ const IJMB = () => {
               {leftSection.heading}
             </h2>
 
-            <div className="space-x-3 space-y-3">
+            {/* <div className="space-x-3 space-y-3">
               <Tabs defaultValue="account">
                 <TabsList>
                   <TabsTrigger value="overview">Overview</TabsTrigger>
@@ -86,7 +86,45 @@ const IJMB = () => {
                   Change your password here.
                 </TabsContent>
               </Tabs>
-            </div>
+            </div> */}
+            <div className='py-3'>
+            <section>
+                    <h4 className="uppercase my-3 font-epilogue font-bold text-xl text-dark">
+                      Program Description
+                    </h4>
+
+                    <div className="space-y-3">
+                      {leftSection.programDescription.map(
+                        (paragraph, index) => (
+                          <p
+                            key={index}
+                            className="text-base text-dark tracking-wide"
+                          >
+                            {paragraph}
+                          </p>
+                        ),
+                      )}
+                      chatButtonText
+                    </div>
+                  </section>
+
+                  <section>
+                    <h4 className="uppercase my-3 font-epilogue font-bold text-xl text-dark">
+                      What Will You Gain?
+                    </h4>
+
+                    <ul className="list-disc ml-5 mt-3">
+                      {leftSection.whatYouGain.map((item, index) => (
+                        <li
+                          key={index}
+                          className="text-base text-dark tracking-wide"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+              </div>
           </div>
 
           {/* Right Section */}

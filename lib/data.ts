@@ -327,10 +327,10 @@ export const ijmbData = {
         title: 'Start Date',
         value: 'Already Started',
       },
-      {
-        title: 'Program Duration',
-        value: '12 months',
-      },
+      // {
+      //   title: 'Program Duration',
+      //   value: '12 months',
+      // },
     ],
   },
 };

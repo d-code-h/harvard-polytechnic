@@ -4,13 +4,17 @@ import Testimonies from '@/components/Testimonies';
 import React from 'react';
 import Footer from '@/components/Footer';
 import AboutTeams from '@/components/AboutTeams';
+import SuccessRate from '@/components/SuccessRate';
 
 const AboutUs = () => {
   return (
     <main>
       <Hero title="About Us" />
-      <Profile />
-      <Testimonies />
+      <div className="relative">
+        <Profile about />
+        <SuccessRate />
+      </div>
+      <Testimonies about />
       <AboutTeams />
       <Footer />
     </main>

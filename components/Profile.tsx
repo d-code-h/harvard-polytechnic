@@ -3,13 +3,19 @@ import CustomButton from './CustomButton';
 import Image from 'next/image';
 import { profileData } from '../lib/data';
 import Container from './Container';
+import clsx from 'clsx';
 
-const Profile = () => {
+const Profile = ({ about }: { about?: boolean }) => {
   const { aboutUs, stats } = profileData;
 
   return (
     <Container>
-      <div className="bg-white flex flex-col md:flex-row gap-12 md:gap-20 mx-auto">
+      <div
+        className={clsx(
+          'bg-white flex flex-col md:flex-row gap-12 md:gap-20 mx-auto',
+          about ? 'mb-28' : '',
+        )}
+      >
         <div className="flex flex-col md:flex-row gap-5 items-center w-auto md:max-w-[390px] lg:max-w-[470px] mx-auto">
           <Image
             src="/images/profile-1.jpg"
@@ -21,10 +27,10 @@ const Profile = () => {
 
           <div className="flex flex-col sm:flex-row md:flex-col flex-1 md:gap-5 w-full md:w-1/2">
             <div className="relative text-[#C4C4C4] flex flex-col items-center justify-center gap-2 p-4 md:p-6 w-full">
-              <div className="absolute top-0 left-0 w-2 h-2 bg-[#FE543D]"></div>
-              <div className="absolute top-0 right-0 w-2 h-2 bg-[#FE543D]"></div>
-              <div className="absolute bottom-0 left-0 w-2 h-2 bg-[#FE543D]"></div>
-              <div className="absolute bottom-0 right-0 w-2 h-2 bg-[#FE543D]"></div>
+              <div className="absolute top-0 left-0 w-2 h-2 bg-primary"></div>
+              <div className="absolute top-0 right-0 w-2 h-2 bg-primary"></div>
+              <div className="absolute bottom-0 left-0 w-2 h-2 bg-primary"></div>
+              <div className="absolute bottom-0 right-0 w-2 h-2 bg-primary"></div>
               <div className="font-bold p-4 rounded-full bg-white flex items-center justify-center text-[#FE543D] text-3xl border">
                 {stats.yearsOfExcellence}
               </div>
@@ -50,14 +56,14 @@ const Profile = () => {
               width={23}
               height={17}
             />
-            <h6 className="uppercase text-sm text-[#FE543D]">
+            <h6 className="uppercase text-sm text-primary">
               {aboutUs.heading}
             </h6>
           </div>
 
           <h2 className="text-5xl md:text-4xl mt-6 mb-7 font-bold font-poppins">
             {aboutUs.title.split(' ')[0]}{' '}
-            <span className="text-[#FE543D] font-bold">
+            <span className="text-primary font-bold">
               {aboutUs.title.split(' ').slice(1).join(' ')}
             </span>
           </h2>

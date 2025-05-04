@@ -7,8 +7,8 @@ const Hero = ({ title }: { title: string }) => {
       <Image
         src="/images/hero.png"
         alt="hero"
-        width={1000}
-        height={1000}
+        width={1500}
+        height={900}
         className="w-full h-[200px] md:h-[300px] object-cover object-right md:object-center"
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center">

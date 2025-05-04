@@ -2,10 +2,14 @@ import React from 'react';
 import Container from './Container';
 import TestimonyCard from './TestimonyCard';
 import { testimonies } from '@/lib/data';
+import clsx from 'clsx';
 
-const Testimonies = () => {
+const Testimonies = ({ about }: { about?: boolean }) => {
   return (
-    <div style={{ backgroundImage: "url('/images/testimony.png')" }}>
+    <div
+      style={{ backgroundImage: "url('/images/testimony.png')" }}
+      className={clsx(about && 'pt-20')}
+    >
       <Container>
         <div className="relative max-w-7xl mx-auto px-4 py-8">
           <h2 className="font-epilogue text-4xl md:text-5xl font-bold text-dark text-center mb-8">

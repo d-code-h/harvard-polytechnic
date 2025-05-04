@@ -31,9 +31,11 @@ const Teams = () => {
 
         {/* Right Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 sm:gap-3 md:gap-7 lg:gap-3 xl:gap-7 justify-items-center w-full flex-1 ">
-          {teams.map((team) => (
-            <TeamCard key={team.name} {...team} />
-          ))}
+          {teams
+            .filter((team) => team.role === 'Executive')
+            .map((team) => (
+              <TeamCard key={team.name} {...team} />
+            ))}
         </div>
       </div>
     </Container>

@@ -10,7 +10,7 @@ const CustomButton = ({ text, styles, arrowStyles }: CustomButtonProps) => {
 
       <div
         className={clsx(
-          'rounded-full t p-5',
+          'rounded-full p-5 md:p-3',
           arrowStyles ? arrowStyles : 'bg-primary-light',
         )}
       >

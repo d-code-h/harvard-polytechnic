@@ -140,23 +140,87 @@ export const PostsData = [
 
 export const teams = [
   {
+    id: 1,
     name: 'Dr. Ajibade Obasanjo',
     position: 'Rector',
+    role: 'Executive',
     src: '/images/teams/team-1.jpg',
   },
   {
+    id: 2,
     name: 'Dr. Ake Joseph Olusiji',
     position: 'Registrar',
+    role: 'Executive',
     src: '/images/teams/team-2.jpg',
   },
   {
+    id: 3,
     name: 'Mrs. Ajibade Esther Taye',
     position: 'Bursar',
+    role: 'Executive',
     src: '/images/teams/team-3.jpg',
   },
   {
+    id: 4,
     name: 'Mr. Afolabi Victor',
     position: 'Deputy Registrar',
+    role: 'Executive',
+    src: '/images/teams/team-4.jpg',
+  },
+  {
+    id: 5,
+    name: 'Mr. Awe Tolulope',
+    position: 'HOD SLT',
+    role: 'Head of Department',
+    src: '/images/teams/team-1.jpg',
+  },
+  {
+    id: 6,
+    name: 'Mr. Christopher Olaniyi',
+    position: 'HOD Accountacy',
+    role: 'Head of Department',
+    src: '/images/teams/team-2.jpg',
+  },
+  {
+    id: 7,
+    name: 'Mr Benjamin',
+    position: 'Lecturer',
+    role: 'Lecturer',
+    src: '/images/teams/team-3.jpg',
+  },
+  {
+    id: 8,
+    name: 'Mr. Osho Adeolu',
+    position: 'HOD Mass Communication',
+    role: 'Head of Department',
+    src: '/images/teams/team-4.jpg',
+  },
+  {
+    id: 9,
+    name: 'Mr. Damilola',
+    position: 'Secretary',
+    role: 'Administrative Staff',
+    src: '/images/teams/team-3.jpg',
+  },
+  {
+    id: 10,
+    name: 'Mr. Mayowa',
+    position: 'Lecturer',
+    role: 'Lecturer',
+    src: '/images/teams/team-4.jpg',
+  },
+  {
+    id: 11,
+    name: 'Mr. Tunde',
+    position: 'Lecturer',
+    role: 'Lecturer',
+    src: '/images/teams/team-3.jpg',
+  },
+  {
+    id: 12,
+    name: 'Mr. Jimoh Soliu',
+    position: 'DSS',
+    role: 'Administrative Staff',
     src: '/images/teams/team-4.jpg',
   },
 ];
@@ -334,3 +398,25 @@ export const ijmbData = {
     ],
   },
 };
+
+export const testimonies = [
+  {
+    text: '“The practical approach to learning at Harvard Polytechnic is unmatched. I was able to secure a job immediately after graduation.”',
+    author: 'Fatima Abdullahi',
+    src: '/images/testimonies/testimony-2.png',
+    position: 'Civil Engineer at Abuja Construction Ltd',
+  },
+  {
+    text: '“Harvard Polytechnic, Ilorin, is a place where dreams come true. The facilities and resources available to students are top-notch.”',
+    author: 'Chinedu Okafor',
+    src: '/images/testimonies/testimony-1.png',
+    position: 'Entrepreneur and Founder of NaijaTech Solutions',
+  },
+
+  {
+    text: '“The environment at Harvard Polytechnic is conducive for learning, and the staff are always ready to assist students in achieving their goals.”',
+    author: 'Ibrahim Musa',
+    src: '/images/testimonies/testimony-1.png',
+    position: 'Mechanical Engineer at Kaduna Refinery',
+  },
+];

@@ -5,7 +5,8 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Posts from '@/components/Posts';
 import Profile from '@/components/Profile';
-import Team from '@/components/Teams';
+import Teams from '@/components/Teams';
+import Testimonies from '@/components/Testimonies';
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
       {/* <Courses /> */}
       <Profile />
       <CTA />
-      <Team />
+      <Testimonies />
+      <Teams />
       <Posts />
       <Footer />
     </main>

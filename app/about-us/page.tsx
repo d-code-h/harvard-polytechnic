@@ -1,11 +1,19 @@
 import Hero from '@/components/global/Hero';
+import Profile from '@/components/Profile';
+import Testimonies from '@/components/Testimonies';
 import React from 'react';
+import Footer from '@/components/Footer';
+import AboutTeams from '@/components/AboutTeams';
 
 const AboutUs = () => {
   return (
-    <div>
+    <main>
       <Hero title="About Us" />
-    </div>
+      <Profile />
+      <Testimonies />
+      <AboutTeams />
+      <Footer />
+    </main>
   );
 };
 

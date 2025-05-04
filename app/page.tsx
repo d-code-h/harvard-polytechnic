@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Posts from '@/components/Posts';
 import Profile from '@/components/Profile';
-import Team from '@/components/Teams';
+import Teams from '@/components/Teams';
 import Testimonies from '@/components/Testimonies';
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
       <Profile />
       <CTA />
       <Testimonies />
-      <Team />
+      <Teams />
       <Posts />
       <Footer />
     </main>

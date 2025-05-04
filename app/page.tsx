@@ -6,6 +6,7 @@ import Hero from '@/components/Hero';
 import Posts from '@/components/Posts';
 import Profile from '@/components/Profile';
 import Team from '@/components/Teams';
+import Testimonies from '@/components/Testimonies';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       {/* <Courses /> */}
       <Profile />
       <CTA />
+      <Testimonies />
       <Team />
       <Posts />
       <Footer />

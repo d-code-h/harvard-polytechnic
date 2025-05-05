@@ -34,13 +34,16 @@ const Contact = () => {
                     : Phone;
 
                 return (
-                  <div key={index} className="flex gap-5">
+                  <div
+                    key={index}
+                    className="flex flex-col items-center md:items-start md:flex-row gap-5"
+                  >
                     <div className="bg-primary/20 p-2 flex justify-center items-center rounded-full w-9 h-9">
                       <IconComponent className="text-primary w-[18px] h-[18px]" />
                     </div>
-                    <section className="space-y-1">
+                    <section className="space-y-1 text-center md:text-left">
                       <p className="text-base text-[#4D5756]">{info.title}</p>
-                      <h4 className="max-w-72 xl:max-w-96 font-epilogue text-base md:text-xl lg:text-lg xl:text-xl text-dark font-bold">
+                      <h4 className="max-w-72 xl:max-w-96 font-epilogue text-base md:text-xl lg:text-lg xl:text-xl text-dark font-bold max-sm:break-all">
                         {info.description}
                       </h4>
                     </section>

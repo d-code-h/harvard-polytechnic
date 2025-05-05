@@ -78,7 +78,7 @@ const Header = () => {
             </Button>
           ))}
         </nav>
-        <div className="order-2 lg:order-3 ms-5 max-md:hidden">
+        <div className="order-2 lg:order-3 ms-12 max-md:hidden">
           <CustomButton text="Apply Now" />
         </div>
       </div>

@@ -5,7 +5,6 @@ import Image from 'next/image';
 import React from 'react';
 import { ijmbData } from '@/lib/data';
 import IJMBChatButton from '@/components/IJMBChatButton';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const IJMB = () => {
   const { heroTitle, leftSection, rightSection } = ijmbData;
@@ -30,16 +29,9 @@ const IJMB = () => {
               {leftSection.heading}
             </h2>
 
-            <div className="space-x-3 space-y-3">
-              <Tabs defaultValue="account">
-                <TabsList>
-                  <TabsTrigger value="overview">Overview</TabsTrigger>
-                  <TabsTrigger value="curriculum">Curriculum</TabsTrigger>
-                  <TabsTrigger value="instructors">Instructors</TabsTrigger>
-                  <TabsTrigger value="reviews">Reviews</TabsTrigger>
-                </TabsList>
-                <TabsContent value="overview">
-                  <section>
+            
+            <div className='py-3'>
+            <section>
                     <h4 className="uppercase my-3 font-epilogue font-bold text-xl text-dark">
                       Program Description
                     </h4>
@@ -75,18 +67,7 @@ const IJMB = () => {
                       ))}
                     </ul>
                   </section>
-                </TabsContent>
-                <TabsContent value="curriculum">
-                  Change your password here.
-                </TabsContent>
-                <TabsContent value="instructors">
-                  Change your password here.
-                </TabsContent>
-                <TabsContent value="reviews">
-                  Change your password here.
-                </TabsContent>
-              </Tabs>
-            </div>
+              </div>
           </div>
 
           {/* Right Section */}

@@ -22,8 +22,8 @@ export const links = [
     label: 'News & Events',
   },
   {
-    href: '/contact',
-    label: 'Contact',
+    href: '/contact-us',
+    label: 'Contact Us',
   },
 ];
 
@@ -257,7 +257,7 @@ export const quickLinks = [
   },
   {
     title: 'Contact Us',
-    href: '/contact',
+    href: '/contact-us',
   },
   {
     title: 'Privacy Policy',

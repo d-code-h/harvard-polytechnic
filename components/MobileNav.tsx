@@ -53,7 +53,7 @@ const MobileNav = () => {
                     href={link.href}
                     className={cn(
                       'block px-4 py-2 text-lg font-medium rounded-md transition-colors',
-                      pathname.includes(link.href)
+                      pathname === link.href
                         ? 'bg-primary-light text-white'
                         : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900',
                     )}

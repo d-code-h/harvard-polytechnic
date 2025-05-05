@@ -420,3 +420,32 @@ export const testimonies = [
     position: 'Mechanical Engineer at Kaduna Refinery',
   },
 ];
+
+export const contactPageData = {
+  heroTitle: 'Contact Us',
+  formFields: [
+    { id: 'name', label: 'Name', type: 'text', required: true },
+    { id: 'email', label: 'Email Address', type: 'email', required: true },
+    { id: 'phone', label: 'Phone', type: 'tel', required: true },
+    { id: 'subject', label: 'Subject', type: 'text', required: true },
+    { id: 'message', label: 'Message', type: 'textarea', required: false },
+  ],
+  contactInfos: [
+    {
+      title: 'Our Address',
+      description:
+        'No 15, Onireke Road, Agbabiaka Area, Ilorin, Kwara State, Nigeria',
+      Icon: 'MapPin',
+    },
+    {
+      title: 'Hours Of Operation',
+      description: 'Mon - Fri: 9:00am to 5:00pm',
+      Icon: 'Clock4',
+    },
+    {
+      title: 'Contact',
+      description: '(+234) 901 992 1862 | info@harvardpolytechnic.edu.ng',
+      Icon: 'Phone',
+    },
+  ],
+};

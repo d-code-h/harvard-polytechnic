@@ -40,7 +40,7 @@ const Modal = () => {
             success. Click below to chat with us and register now!
           </p>
           <Button
-            className="text-center text-lg py-5 w-full bg-red-600 text-white hover:bg-red-700"
+            className="text-center text-lg py-5 w-full bg-red-600 text-white hover:bg-red-700 focus-visible:ring-red-300"
             onClick={() => window.open(whatsappLink, '_blank')}
           >
             Register Now

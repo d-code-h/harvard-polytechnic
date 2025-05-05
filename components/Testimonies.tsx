@@ -8,7 +8,7 @@ const Testimonies = ({ about }: { about?: boolean }) => {
   return (
     <div
       style={{ backgroundImage: "url('/images/testimony.png')" }}
-      className={clsx(about && 'pt-20')}
+      className={clsx(about && 'lg:pt-20')}
     >
       <Container>
         <div className="relative max-w-7xl mx-auto px-4 py-8">

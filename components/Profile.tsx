@@ -13,7 +13,7 @@ const Profile = ({ about }: { about?: boolean }) => {
       <div
         className={clsx(
           'bg-white flex flex-col md:flex-row gap-12 md:gap-20 mx-auto',
-          about ? 'mb-28' : '',
+          about ? 'lg:mb-28' : '',
         )}
       >
         <div className="flex flex-col md:flex-row gap-5 items-center w-auto md:max-w-[390px] lg:max-w-[470px] mx-auto">

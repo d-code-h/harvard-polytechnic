@@ -25,7 +25,7 @@ const ratings = [
 ];
 const SuccessRate = () => {
   return (
-    <div className="rounded-[200px] bg-[#E3DBFF] px-16 py-14 flex items-center gap-7 w-fit mx-auto absolute -bottom-20 left-1/2 -translate-x-1/2">
+    <div className="rounded-[200px] max-lg:hidden bg-[#E3DBFF] px-6 xl:px-16 py-14 flex items-center gap-7 w-fit mx-auto absolute -bottom-20 left-1/2 -translate-x-1/2">
       {ratings.map((rating) => (
         <div key={rating.caption} className="flex items-center gap-1">
           <div className="bg-white flex justify-between items-center rounded-full w-12 h-12 p-2">

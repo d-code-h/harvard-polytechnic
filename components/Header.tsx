@@ -10,6 +10,13 @@ import CustomButton from './CustomButton';
 import { links } from '@/lib/data';
 import MobileNav from './MobileNav';
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+
 const Header = () => {
   const pathname = usePathname();
   return (
@@ -59,23 +66,53 @@ const Header = () => {
       <div className="hidden lg:flex flex-wrap items-center order-3 lg:order-2 max-xl:mx-auto">
         <nav className="flex gap-4">
           {links.map(({ href, label }, index) => (
-            <Button
-              key={index}
-              variant="link"
-              asChild
-              className="text-dark rounded-full hover:text-primary transition-all duration-300"
-            >
-              <Link
-                href={href}
-                className={cn(
-                  pathname === href
-                    ? 'border rounded-b-full border-primary text-primary'
-                    : 'text-gray-600',
-                )}
-              >
-                {label}
-              </Link>
-            </Button>
+            <div key={index}>
+              {label === 'Admissions' ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="text-dark rounded-full hover:text-primary transition-all duration-300">
+                    <Button
+                      variant="ghost"
+                      asChild
+                      className="text-gray-600 rounded-full hover:text-primary transition-all duration-300 hover:bg-white hover:underline hover:border-0 underline-offset-4 focus:border-none focus:ring-0"
+                    >
+                      <span>Admissions</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem>
+                      <Link href="/admission/ijmb">IJMB Application</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Link href="/admission/national-diploma">
+                        ND Application
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Link href="/admission/higher-national-diploma">
+                        HND Application
+                      </Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Button
+                  variant="link"
+                  asChild
+                  className="text-dark rounded-full hover:text-primary transition-all duration-300"
+                >
+                  <Link
+                    href={href}
+                    className={cn(
+                      pathname === href
+                        ? 'border rounded-b-full border-primary text-primary'
+                        : 'text-gray-600',
+                    )}
+                  >
+                    {label}
+                  </Link>
+                </Button>
+              )}
+            </div>
           ))}
         </nav>
         <div className="order-2 lg:order-3 ms-8 max-md:hidden">

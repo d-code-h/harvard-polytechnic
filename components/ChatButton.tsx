@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from './ui/button';
 
-const IJMBChatButton = ({
+const ChatButton = ({
   rightSection,
 }: {
   rightSection: {
@@ -20,4 +20,4 @@ const IJMBChatButton = ({
   );
 };
 
-export default IJMBChatButton;
+export default ChatButton;

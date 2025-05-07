@@ -437,7 +437,7 @@ export const ijmbData = {
       alt: 'Apply for IJMB',
     },
     heading: 'Ready to Join the IJMB Program?',
-    chatButtonText: 'Chat to Apply',
+    chatButtonText: 'Apply Now',
     whatsappLink:
       'https://wa.me/2349019921862?text=Hello, I am interested in applying for the IJMB program at Harvard Polytechnic.',
     details: [
@@ -460,6 +460,114 @@ export const ijmbData = {
       // {
       //   title: 'Program Duration',
       //   value: '12 months',
+      // },
+    ],
+  },
+};
+
+export const ndData = {
+  heroTitle: 'National Diploma (ND) Program',
+  leftSection: {
+    image: {
+      src: '/images/ijmb.jpg',
+      alt: 'About ND',
+    },
+    heading: 'Build a Strong Academic Foundation with Our ND Program',
+    buttons: ['Overview', 'Curriculum', 'Instructor', 'Review'],
+    programDescription: [
+      'The National Diploma (ND) program at Harvard Polytechnic, Ilorin, is a two-year foundational program that equips students with essential technical and professional skills required for entry-level positions and further academic pursuits.',
+      'Our ND program is accredited by the National Board for Technical Education (NBTE) and is taught by qualified instructors in a practical-oriented environment to ensure real-world readiness.',
+    ],
+    whatYouGain: [
+      'Industry-relevant knowledge and hands-on training.',
+      'Opportunity for Industrial Training (IT) experience.',
+      'Eligibility for progression to Higher National Diploma (HND).',
+      'Development of professional and entrepreneurial skills.',
+    ],
+  },
+  rightSection: {
+    image: {
+      src: '/images/ijmb-apply.jpg',
+      alt: 'Apply for ND',
+    },
+    heading: 'Kickstart Your Career with Our ND Program',
+    chatButtonText: 'Apply Now',
+    whatsappLink:
+      'https://wa.me/2349019921862?text=Hello, I am interested in applying for the ND program at Harvard Polytechnic.',
+    details: [
+      {
+        title: 'Enrolled Students',
+        value: '1000+',
+      },
+      {
+        title: 'Lectures Per Week',
+        value: '12',
+      },
+      {
+        title: 'Language of Instruction',
+        value: 'English',
+      },
+      {
+        title: 'Start Date',
+        value: 'Currently Ongoing',
+      },
+      // {
+      //   title: 'Program Duration',
+      //   value: '24 months',
+      // },
+    ],
+  },
+};
+
+export const hndData = {
+  heroTitle: 'Higher National Diploma (HND) Program',
+  leftSection: {
+    image: {
+      src: '/images/ijmb.jpg',
+      alt: 'About HND',
+    },
+    heading: 'Advance Your Career with Our HND Program',
+    buttons: ['Overview', 'Curriculum', 'Instructor', 'Review'],
+    programDescription: [
+      'The Higher National Diploma (HND) program at Harvard Polytechnic, Ilorin, is a two-year advanced program designed for ND holders who wish to deepen their technical knowledge and enhance their employability.',
+      'With NBTE accreditation, a student-focused curriculum, and expert faculty, our HND program bridges the gap between education and industry, preparing students for leadership and innovation in their fields.',
+    ],
+    whatYouGain: [
+      'Specialized and in-depth knowledge in your field of study.',
+      'Eligibility for NYSC (for Nigerian students).',
+      'Increased job prospects and career advancement.',
+      'Critical thinking and leadership development.',
+    ],
+  },
+  rightSection: {
+    image: {
+      src: '/images/ijmb-apply.jpg',
+      alt: 'Apply for HND',
+    },
+    heading: 'Take the Next Step with Our HND Program',
+    chatButtonText: 'Apply Now',
+    whatsappLink:
+      'https://wa.me/2349019921862?text=Hello, I am interested in applying for the HND program at Harvard Polytechnic.',
+    details: [
+      {
+        title: 'Enrolled Students',
+        value: '800+',
+      },
+      {
+        title: 'Lectures Per Week',
+        value: '12',
+      },
+      {
+        title: 'Language of Instruction',
+        value: 'English',
+      },
+      {
+        title: 'Start Date',
+        value: 'Currently Ongoing',
+      },
+      // {
+      //   title: 'Program Duration',
+      //   value: '24 months',
       // },
     ],
   },

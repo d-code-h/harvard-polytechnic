@@ -3,11 +3,11 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/global/Hero';
 import Image from 'next/image';
 import React from 'react';
-import { ijmbData } from '@/lib/data';
+import { hndData } from '@/lib/data';
 import ChatButton from '@/components/ChatButton';
 
-const IJMB = () => {
-  const { heroTitle, leftSection, rightSection } = ijmbData;
+const HigherNationalDiploma = () => {
+  const { heroTitle, leftSection, rightSection } = hndData;
 
   return (
     <div>
@@ -107,4 +107,4 @@ const IJMB = () => {
   );
 };
 
-export default IJMB;
+export default HigherNationalDiploma;

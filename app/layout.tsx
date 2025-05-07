@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 import { Sora, Epilogue, Poppins } from 'next/font/google';
 import './globals.css';
-import Contact from '@/components/Contact';
-import Header from '@/components/Header';
-import Modal from '@/components/Modal';
 
 const sora = Sora({
   variable: '--font-sora',
@@ -37,10 +34,6 @@ export default function RootLayout({
       <body
         className={`${sora.className} ${epilogue.variable} ${poppins.variable} antialiased`}
       >
-        <Modal />
-        <Contact />
-        <Header />
-
         {children}
       </body>
     </html>

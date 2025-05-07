@@ -14,12 +14,12 @@ export const links = [
     label: 'Admissions',
   },
   {
-    href: '/academics',
-    label: 'Academics',
-  },
-  {
     href: '/news',
     label: 'News & Events',
+  },
+  {
+    href: '/portal',
+    label: 'Portal',
   },
   {
     href: '/contact-us',

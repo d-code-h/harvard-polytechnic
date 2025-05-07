@@ -1,18 +1,19 @@
 import Image from 'next/image';
 import React from 'react';
 import CustomButton from './CustomButton';
+import Link from 'next/link';
 
 const Post = (post: PostProps) => {
   return (
-    <div className="bg-[#EFEFEF] rounded-lg max-md:mx-auto p-7 hover:shadow-lg transition-all duration-100 ease-in-out hover:border-1 border-dark">
+    <div className="bg-[#EFEFEF] rounded-lg max-md:mx-auto p-4 hover:shadow-lg transition-all duration-100 ease-in-out hover:border-1 border-primary/75">
       <Image
-        src={post.src}
+        src={post.src[0]}
         alt="post"
         width={500}
         height={200}
         className="w-full h-[200px] object-cover object-center rounded-lg"
       />
-      <div className="flex flex-wrap items-center gap-6 mt-6">
+      <div className="flex flex-wrap items-center justify-between gap-6 mt-6">
         <h6 className="flex items-center gap-2">
           <Image
             src="/icons/calendar.svg"
@@ -33,11 +34,13 @@ const Post = (post: PostProps) => {
         {post.text}
       </p>
       <div className="flex flex-col gap-5">
-        <CustomButton
-          styles="bg-[#E9E2FF] group text-primary hover:text-white w-fit"
-          arrowStyles="bg-[#E3DBFF] group-hover:text-primary"
-          text="Read More"
-        />
+        <Link href={`/news/${post.id}`}>
+          <CustomButton
+            styles="bg-[#E9E2FF] group text-primary hover:text-white w-fit"
+            arrowStyles="bg-[#E3DBFF] group-hover:text-primary"
+            text="Read More"
+          />
+        </Link>
       </div>
     </div>
   );

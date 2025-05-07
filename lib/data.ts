@@ -647,3 +647,42 @@ export const contactPageData = {
     },
   ],
 };
+
+// Category - Full Time (FT), Part Time (PT)
+// Level - National Diploma (ND) or Higher National Diploma (HND)
+// Surname
+// FirstName
+// Othername
+// Email Address
+// Phone Number
+// Gender
+// Password
+// Confirm Password - Show password checkbox
+// Desired Department - Select
+// Amount - 10,000 default (Unchangeable)
+// Gateway Charge - 400 (unchangeable)
+// Total Charge - 10, 400 unchangeable
+// Make Payment and Reset Button
+
+// Accountancy
+// Business Administration and Management
+// Computer Engineering
+// Computer Science
+// Mass Communication
+// Public Administration
+// Science Laboratory Technology
+// Software and Web Development
+// Networking and Cloud Computing
+// Cybersecurity and Data Protection
+// Artificial Intelligence
+// Journalism and Media Studies
+// Film and Multimedia Production
+// Strategic Communication and Media Studies
+// Physics/Electronics
+// Estate Management
+// Statistics
+// Electrical and Electronic Engineering
+// Biology/Microbiology
+
+// HPI/2025/0001
+// Surname as password

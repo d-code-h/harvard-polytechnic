@@ -5,7 +5,8 @@ declare interface CustomButtonProps {
 }
 
 declare interface PostProps {
-  src: string;
+  id: number;
+  src: string[];
   date: string;
   comments: string;
   text: string;

@@ -14,12 +14,12 @@ export const links = [
     label: 'Admissions',
   },
   {
-    href: '/academics',
-    label: 'Academics',
-  },
-  {
     href: '/news',
     label: 'News & Events',
+  },
+  {
+    href: '/portal',
+    label: 'Portal',
   },
   {
     href: '/contact-us',
@@ -119,21 +119,111 @@ export const contact = [
 
 export const PostsData = [
   {
-    src: '/images/posts/post-1.jpg',
+    id: 1,
+    src: ['/images/posts/post-1.jpg', '/images/posts/post-1.jpg'],
     date: '10 Sept. 2023',
     comments: '12',
+    title: 'Post 1',
+    category: 'students',
     text: 'Harvard Polytechnic launches new state-of-the-art engineering lab.',
   },
   {
-    src: '/images/posts/post-2.jpg',
+    id: 2,
+    src: ['/images/posts/post-2.jpg', '/images/posts/post-2.jpg'],
     date: '15 Oct. 2023',
     comments: '20',
+    title: 'Post 2',
+    category: 'admissions',
     text: 'Harvard Polytechnic celebrates the 2023 matriculation ceremony with over 300 new students.',
   },
   {
-    src: '/images/posts/post-3.jpg',
+    id: 3,
+    src: ['/images/posts/post-3.jpg', '/images/posts/post-3.jpg'],
     date: '30 Sept. 2023',
     comments: '10',
+    title: 'Post 3',
+    category: 'administratives',
+    text: 'Our students shine at the inter-polytechnic sports competition, winning multiple gold medals.',
+  },
+  {
+    id: 4,
+    src: ['/images/posts/post-1.jpg', '/images/posts/post-1.jpg'],
+    date: '10 Sept. 2023',
+    comments: '12',
+    title: 'Post 4',
+    category: 'students',
+    text: 'Harvard Polytechnic launches new state-of-the-art engineering lab.',
+  },
+  {
+    id: 5,
+    src: ['/images/posts/post-2.jpg', '/images/posts/post-2.jpg'],
+    date: '15 Oct. 2023',
+    comments: '20',
+    title: 'Post 5',
+    category: 'admissions',
+    text: 'Harvard Polytechnic celebrates the 2023 matriculation ceremony with over 300 new students.',
+  },
+  {
+    id: 6,
+    src: ['/images/posts/post-3.jpg', '/images/posts/post-3.jpg'],
+    date: '30 Sept. 2023',
+    comments: '10',
+    title: 'Post 6',
+    category: 'administratives',
+    text: 'Our students shine at the inter-polytechnic sports competition, winning multiple gold medals.',
+  },
+  {
+    id: 7,
+    src: ['/images/posts/post-1.jpg', '/images/posts/post-1.jpg'],
+    date: '10 Sept. 2023',
+    comments: '12',
+    title: 'Post 7',
+    category: 'students',
+    text: 'Harvard Polytechnic launches new state-of-the-art engineering lab.',
+  },
+  {
+    id: 8,
+    src: ['/images/posts/post-2.jpg', '/images/posts/post-2.jpg'],
+    date: '15 Oct. 2023',
+    comments: '20',
+    title: 'Post 8',
+    category: 'students',
+    text: 'Harvard Polytechnic celebrates the 2023 matriculation ceremony with over 300 new students.',
+  },
+  {
+    id: 9,
+    src: ['/images/posts/post-3.jpg', '/images/posts/post-3.jpg'],
+    date: '30 Sept. 2023',
+    comments: '10',
+    title: 'Post 9',
+    category: 'administratives',
+    text: 'Our students shine at the inter-polytechnic sports competition, winning multiple gold medals.',
+  },
+  {
+    id: 10,
+    src: ['/images/posts/post-1.jpg', '/images/posts/post-1.jpg'],
+    date: '10 Sept. 2023',
+    comments: '12',
+    title: 'Post 10',
+    category: 'admissions',
+    text: 'Harvard Polytechnic launches new state-of-the-art engineering lab.',
+  },
+  {
+    id: 11,
+    src: ['/images/posts/post-2.jpg', '/images/posts/post-2.jpg'],
+    date: '15 Oct. 2023',
+    comments: '20',
+    title: 'Post 11',
+    category: 'administratives',
+    text: 'Harvard Polytechnic celebrates the 2023 matriculation ceremony with over 300 new students.',
+  },
+  {
+    id: 12,
+    src: ['/images/posts/post-3.jpg', '/images/posts/post-3.jpg'],
+    date: '30 Sept. 2023',
+    comments: '10',
+    title: 'Post 12',
+    category: 'admissions',
     text: 'Our students shine at the inter-polytechnic sports competition, winning multiple gold medals.',
   },
 ];
@@ -371,7 +461,7 @@ export const ijmbData = {
       alt: 'Apply for IJMB',
     },
     heading: 'Ready to Join the IJMB Program?',
-    chatButtonText: 'Chat to Apply',
+    chatButtonText: 'Apply Now',
     whatsappLink:
       'https://wa.me/2349019921862?text=Hello, I am interested in applying for the IJMB program at Harvard Polytechnic.',
     details: [
@@ -394,6 +484,114 @@ export const ijmbData = {
       // {
       //   title: 'Program Duration',
       //   value: '12 months',
+      // },
+    ],
+  },
+};
+
+export const ndData = {
+  heroTitle: 'National Diploma (ND) Program',
+  leftSection: {
+    image: {
+      src: '/images/ijmb.jpg',
+      alt: 'About ND',
+    },
+    heading: 'Build a Strong Academic Foundation with Our ND Program',
+    buttons: ['Overview', 'Curriculum', 'Instructor', 'Review'],
+    programDescription: [
+      'The National Diploma (ND) program at Harvard Polytechnic, Ilorin, is a two-year foundational program that equips students with essential technical and professional skills required for entry-level positions and further academic pursuits.',
+      'Our ND program is accredited by the National Board for Technical Education (NBTE) and is taught by qualified instructors in a practical-oriented environment to ensure real-world readiness.',
+    ],
+    whatYouGain: [
+      'Industry-relevant knowledge and hands-on training.',
+      'Opportunity for Industrial Training (IT) experience.',
+      'Eligibility for progression to Higher National Diploma (HND).',
+      'Development of professional and entrepreneurial skills.',
+    ],
+  },
+  rightSection: {
+    image: {
+      src: '/images/ijmb-apply.jpg',
+      alt: 'Apply for ND',
+    },
+    heading: 'Kickstart Your Career with Our ND Program',
+    chatButtonText: 'Apply Now',
+    whatsappLink:
+      'https://wa.me/2349019921862?text=Hello, I am interested in applying for the ND program at Harvard Polytechnic.',
+    details: [
+      {
+        title: 'Enrolled Students',
+        value: '1000+',
+      },
+      {
+        title: 'Lectures Per Week',
+        value: '12',
+      },
+      {
+        title: 'Language of Instruction',
+        value: 'English',
+      },
+      {
+        title: 'Start Date',
+        value: 'Currently Ongoing',
+      },
+      // {
+      //   title: 'Program Duration',
+      //   value: '24 months',
+      // },
+    ],
+  },
+};
+
+export const hndData = {
+  heroTitle: 'Higher National Diploma (HND) Program',
+  leftSection: {
+    image: {
+      src: '/images/ijmb.jpg',
+      alt: 'About HND',
+    },
+    heading: 'Advance Your Career with Our HND Program',
+    buttons: ['Overview', 'Curriculum', 'Instructor', 'Review'],
+    programDescription: [
+      'The Higher National Diploma (HND) program at Harvard Polytechnic, Ilorin, is a two-year advanced program designed for ND holders who wish to deepen their technical knowledge and enhance their employability.',
+      'With NBTE accreditation, a student-focused curriculum, and expert faculty, our HND program bridges the gap between education and industry, preparing students for leadership and innovation in their fields.',
+    ],
+    whatYouGain: [
+      'Specialized and in-depth knowledge in your field of study.',
+      'Eligibility for NYSC (for Nigerian students).',
+      'Increased job prospects and career advancement.',
+      'Critical thinking and leadership development.',
+    ],
+  },
+  rightSection: {
+    image: {
+      src: '/images/ijmb-apply.jpg',
+      alt: 'Apply for HND',
+    },
+    heading: 'Take the Next Step with Our HND Program',
+    chatButtonText: 'Apply Now',
+    whatsappLink:
+      'https://wa.me/2349019921862?text=Hello, I am interested in applying for the HND program at Harvard Polytechnic.',
+    details: [
+      {
+        title: 'Enrolled Students',
+        value: '800+',
+      },
+      {
+        title: 'Lectures Per Week',
+        value: '12',
+      },
+      {
+        title: 'Language of Instruction',
+        value: 'English',
+      },
+      {
+        title: 'Start Date',
+        value: 'Currently Ongoing',
+      },
+      // {
+      //   title: 'Program Duration',
+      //   value: '24 months',
       // },
     ],
   },

@@ -15,8 +15,8 @@ const Posts = () => {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-6">
-          {PostsData.map((post) => (
-            <Post key={post.src} {...post} />
+          {PostsData.slice(0, 3).map((post) => (
+            <Post key={post.id} {...post} />
           ))}
         </div>
       </Container>

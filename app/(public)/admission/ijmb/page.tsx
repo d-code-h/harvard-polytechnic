@@ -4,7 +4,7 @@ import Hero from '@/components/global/Hero';
 import Image from 'next/image';
 import React from 'react';
 import { ijmbData } from '@/lib/data';
-import IJMBChatButton from '@/components/IJMBChatButton';
+import ChatButton from '@/components/ChatButton';
 
 const IJMB = () => {
   const { heroTitle, leftSection, rightSection } = ijmbData;
@@ -29,45 +29,42 @@ const IJMB = () => {
               {leftSection.heading}
             </h2>
 
-            
-            <div className='py-3'>
-            <section>
-                    <h4 className="uppercase my-3 font-epilogue font-bold text-xl text-dark">
-                      Program Description
-                    </h4>
+            <div className="py-3">
+              <section>
+                <h4 className="uppercase my-3 font-epilogue font-bold text-xl text-dark">
+                  Program Description
+                </h4>
 
-                    <div className="space-y-3">
-                      {leftSection.programDescription.map(
-                        (paragraph, index) => (
-                          <p
-                            key={index}
-                            className="text-base text-dark tracking-wide"
-                          >
-                            {paragraph}
-                          </p>
-                        ),
-                      )}
-                      chatButtonText
-                    </div>
-                  </section>
+                <div className="space-y-3">
+                  {leftSection.programDescription.map((paragraph, index) => (
+                    <p
+                      key={index}
+                      className="text-base text-dark tracking-wide"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                  chatButtonText
+                </div>
+              </section>
 
-                  <section>
-                    <h4 className="uppercase my-3 font-epilogue font-bold text-xl text-dark">
-                      What Will You Gain?
-                    </h4>
+              <section>
+                <h4 className="uppercase my-3 font-epilogue font-bold text-xl text-dark">
+                  What Will You Gain?
+                </h4>
 
-                    <ul className="list-disc ml-5 mt-3">
-                      {leftSection.whatYouGain.map((item, index) => (
-                        <li
-                          key={index}
-                          className="text-base text-dark tracking-wide"
-                        >
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
-              </div>
+                <ul className="list-disc ml-5 mt-3">
+                  {leftSection.whatYouGain.map((item, index) => (
+                    <li
+                      key={index}
+                      className="text-base text-dark tracking-wide"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </div>
           </div>
 
           {/* Right Section */}
@@ -86,7 +83,7 @@ const IJMB = () => {
                   {rightSection.heading}
                 </h4>
 
-                <IJMBChatButton rightSection={rightSection} />
+                <ChatButton rightSection={rightSection} />
               </div>
             </div>
 

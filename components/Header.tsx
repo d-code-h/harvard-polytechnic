@@ -102,6 +102,7 @@ const Header = () => {
                 >
                   <Link
                     href={href}
+                    target={label === 'Portal' ? '_blank' : '_self'}
                     className={cn(
                       pathname === href
                         ? 'border rounded-b-full border-primary text-primary'

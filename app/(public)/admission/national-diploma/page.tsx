@@ -4,7 +4,8 @@ import Hero from '@/components/global/Hero';
 import Image from 'next/image';
 import React from 'react';
 import { ndData } from '@/lib/data';
-import ChatButton from '@/components/ChatButton';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const NationalDiploma = () => {
   const { heroTitle, leftSection, rightSection } = ndData;
@@ -83,7 +84,11 @@ const NationalDiploma = () => {
                   {rightSection.heading}
                 </h4>
 
-                <ChatButton rightSection={rightSection} />
+                <Link href="/admission/national-diploma/application">
+                  <Button className="text-center text-lg py-6 my-3 w-full">
+                    Apply Here
+                  </Button>
+                </Link>
               </div>
             </div>
 

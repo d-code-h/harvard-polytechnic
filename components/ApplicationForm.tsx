@@ -1,46 +1,9 @@
 'use client';
 
-// Category - Full Time (FT), Part Time (PT)
-// Level - National Diploma (ND) or Higher National Diploma (HND)
-// Surname
-// FirstName
-// Othername
-// Email Address
-// Phone Number
-// Gender
-// Password
-// Confirm Password - Show password checkbox
-// Desired Department - Select
-// Amount - 10,000 default (Unchangeable)
-// Gateway Charge - 400 (unchangeable)
-// Total Charge - 10, 400 unchangeable
-// Make Payment and Reset Button
-
-// List of Departments
-// Accountancy
-// Business Administration and Management
-// Computer Engineering
-// Computer Science
-// Mass Communication
-// Public Administration
-// Science Laboratory Technology
-// Software and Web Development
-// Networking and Cloud Computing
-// Cybersecurity and Data Protection
-// Artificial Intelligence
-// Journalism and Media Studies
-// Film and Multimedia Production
-// Strategic Communication and Media Studies
-// Physics/Electronics
-// Estate Management
-// Statistics
-// Electrical and Electronic Engineering
-// Biology/Microbiology
-
-// HPI/2025/0001
-// Surname as password
-
 import React, { useState } from 'react';
+import { useForm, Controller } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
@@ -52,8 +15,22 @@ import {
   SelectItem,
 } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
-import { cn } from '@/lib/utils';
 
+type FormData = {
+  surname: string;
+  firstName: string;
+  otherName: string;
+  email: string;
+  phone: string;
+  category: string;
+  level: string;
+  gender: string;
+  department: string;
+  password: string;
+  confirmPassword: string;
+};
+
+// Department List
 const departments = [
   'Accountancy',
   'Business Administration and Management',
@@ -76,11 +53,61 @@ const departments = [
   'Biology/Microbiology',
 ];
 
+// Zod schema for validation
+const schema = z.object({
+  surname: z.string().min(1, 'Surname is required'),
+  firstName: z.string().min(1, 'First Name is required'),
+  otherName: z.string(),
+  email: z.string().email('Invalid email address').min(1, 'Email is required'),
+  phone: z.string().min(1, 'Phone number is required'),
+  category: z.string().min(1, 'Category is required'),
+  level: z.string().min(1, 'Level is required'),
+  gender: z.string().min(1, 'Gender is required'),
+  department: z.string().min(1, 'Department is required'),
+  password: z.string().min(1, 'Password is required'),
+  confirmPassword: z.string().min(1, 'Please confirm your password'),
+});
+
+// Initial form data
 const ApplicationForm = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [selectedDepartment, setSelectedDepartment] = useState('');
-  const [category, setCategory] = useState('');
-  const [level, setLevel] = useState('');
+
+  const {
+    handleSubmit,
+    control,
+    // setValue,
+    watch,
+    register,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      surname: '',
+      firstName: '',
+      otherName: '',
+      email: '',
+      phone: '',
+      category: '',
+      level: '',
+      gender: '',
+      department: '',
+      password: '',
+      confirmPassword: '',
+    },
+  });
+
+  // Watch for password and confirmPassword to compare
+  const watchPassword = watch('password');
+  const watchConfirmPassword = watch('confirmPassword');
+
+  const handleFormSubmit = (data: FormData) => {
+    if (data.password === data.confirmPassword) {
+      // Submit logic goes here
+      console.log('Submitted successfully!', data);
+    } else {
+      console.log('Passwords do not match');
+    }
+  };
 
   return (
     <div className="min-h-screen px-4 py-10 flex justify-center bg-gray-50">
@@ -89,156 +116,257 @@ const ApplicationForm = () => {
           Application Form
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {/* Category */}
-          <div>
-            <Label>Category</Label>
-            <Select onValueChange={setCategory}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select Category" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Full Time">Full Time (FT)</SelectItem>
-                <SelectItem value="Part Time">Part Time (PT)</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Level */}
-          <div>
-            <Label>Level</Label>
-            <Select onValueChange={setLevel}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select Level" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="ND">National Diploma (ND)</SelectItem>
-                <SelectItem value="HND">
-                  Higher National Diploma (HND)
-                </SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Names */}
-          <div>
-            <Label>Surname</Label>
-            <Input type="text" placeholder="Enter Surname" required />
-          </div>
-          <div>
-            <Label>First Name</Label>
-            <Input type="text" placeholder="Enter First Name" required />
-          </div>
-          <div>
-            <Label>Other Name</Label>
-            <Input type="text" placeholder="Enter Other Name" />
-          </div>
-
-          {/* Email & Phone */}
-          <div>
-            <Label>Email Address</Label>
-            <Input type="email" placeholder="Enter Email" required />
-          </div>
-          <div>
-            <Label>Phone Number</Label>
-            <Input type="tel" placeholder="Enter Phone Number" required />
-          </div>
-
-          {/* Gender */}
-          <div>
-            <Label>Gender</Label>
-            <Select>
-              <SelectTrigger>
-                <SelectValue placeholder="Select Gender" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Male">Male</SelectItem>
-                <SelectItem value="Female">Female</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Department */}
-          <div>
-            <Label>Desired Department</Label>
-            <Select onValueChange={setSelectedDepartment}>
-              <SelectTrigger>
-                <SelectValue placeholder="Choose Department" />
-              </SelectTrigger>
-              <SelectContent>
-                {departments.map((dept, idx) => (
-                  <SelectItem key={idx} value={dept}>
-                    {dept}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Passwords */}
-          <div>
-            <Label>Password</Label>
-            <Input
-              type={showPassword ? 'text' : 'password'}
-              placeholder="Enter Password"
-              required
-            />
-          </div>
-          <div>
-            <Label>Confirm Password</Label>
-            <Input
-              type={showPassword ? 'text' : 'password'}
-              placeholder="Confirm Password"
-              required
-            />
-            <div className="mt-2 flex items-center space-x-2">
-              <Checkbox
-                id="showPass"
-                checked={showPassword}
-                onCheckedChange={() => setShowPassword(!showPassword)}
+        <form onSubmit={handleSubmit(handleFormSubmit)} className="space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Category */}
+            <div className="space-y-1">
+              <Label>Category</Label>
+              <Controller
+                control={control}
+                name="category"
+                render={({ field }) => (
+                  <Select {...field}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select Category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Full Time">Full Time (FT)</SelectItem>
+                      <SelectItem value="Part Time">Part Time (PT)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                )}
               />
-              <Label htmlFor="showPass" className="text-sm">
-                Show password
-              </Label>
+              {errors.category && (
+                <p className="text-sm text-red-600">
+                  {errors.category?.message}
+                </p>
+              )}
+            </div>
+
+            {/* Level */}
+            <div className="space-y-1">
+              <Label>Level</Label>
+              <Controller
+                control={control}
+                name="level"
+                render={({ field }) => (
+                  <Select {...field}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select Level" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="ND">National Diploma (ND)</SelectItem>
+                      <SelectItem value="HND">
+                        Higher National Diploma (HND)
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                )}
+              />
+              {errors.level && (
+                <p className="text-sm text-red-600">{errors.level?.message}</p>
+              )}
+            </div>
+
+            {/* Names */}
+            <div className="space-y-1">
+              <Label>Surname</Label>
+              <Input {...register('surname')} placeholder="Enter Surname" />
+              {errors.surname && (
+                <p className="text-sm text-red-600">
+                  {errors.surname?.message}
+                </p>
+              )}
+            </div>
+
+            <div className="space-y-1">
+              <Label>First Name</Label>
+              <Input
+                {...register('firstName')}
+                placeholder="Enter First Name"
+              />
+              {errors.firstName && (
+                <p className="text-sm text-red-600">
+                  {errors.firstName?.message}
+                </p>
+              )}
+            </div>
+
+            <div className="space-y-1">
+              <Label>Other Name</Label>
+              <Input
+                {...register('otherName')}
+                placeholder="Enter Other Name"
+              />
+            </div>
+
+            {/* Email & Phone */}
+            <div className="space-y-1">
+              <Label>Email Address</Label>
+              <Input {...register('email')} placeholder="Enter Email" />
+              {errors.email && (
+                <p className="text-sm text-red-600">{errors.email?.message}</p>
+              )}
+            </div>
+
+            <div className="space-y-1">
+              <Label>Phone Number</Label>
+              <Input {...register('phone')} placeholder="Enter Phone Number" />
+              {errors.phone && (
+                <p className="text-sm text-red-600">{errors.phone?.message}</p>
+              )}
+            </div>
+
+            {/* Gender */}
+            <div className="space-y-1">
+              <Label>Gender</Label>
+              <Controller
+                control={control}
+                name="gender"
+                render={({ field }) => (
+                  <Select {...field}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select Gender" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Male">Male</SelectItem>
+                      <SelectItem value="Female">Female</SelectItem>
+                    </SelectContent>
+                  </Select>
+                )}
+              />
+              {errors.gender && (
+                <p className="text-sm text-red-600">{errors.gender?.message}</p>
+              )}
+            </div>
+
+            {/* Department */}
+            <div className="space-y-1 col-span-1 sm:col-span-2">
+              <Label>Desired Department</Label>
+              <Controller
+                control={control}
+                name="department"
+                render={({ field }) => (
+                  <Select {...field}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Choose Department" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {departments.map((dept, idx) => (
+                        <SelectItem key={idx} value={dept}>
+                          {dept}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                )}
+              />
+              {errors.department && (
+                <p className="text-sm text-red-600">
+                  {errors.department?.message}
+                </p>
+              )}
+            </div>
+
+            {/* Passwords */}
+            <div className="space-y-1 md:space-y-0 sm:col-span-2 md:flex sm:space-y-4 gap-4">
+              <div className="flex-1 space-y-1">
+                <Label>Password</Label>
+                <Input
+                  type={showPassword ? 'text' : 'password'}
+                  {...register('password')}
+                  placeholder="Enter Password"
+                />
+                {errors.password && (
+                  <p className="text-sm text-red-600">
+                    {errors.password?.message}
+                  </p>
+                )}
+              </div>
+
+              <div className="flex-1 space-y-1">
+                <Label>Confirm Password</Label>
+                <Input
+                  type={showPassword ? 'text' : 'password'}
+                  {...register('confirmPassword')}
+                  placeholder="Confirm Password"
+                />
+                {errors.confirmPassword && (
+                  <p className="text-sm text-red-600">
+                    {errors.confirmPassword?.message}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            <div className="mt-2 flex flex-wrap items-center justify-between gap-2 sm:col-span-2 my-3">
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  id="showPass"
+                  checked={showPassword}
+                  onCheckedChange={() => setShowPassword(!showPassword)}
+                />
+                <Label htmlFor="showPass" className="text-sm">
+                  Show password
+                </Label>
+              </div>
+
+              {watchPassword && watchConfirmPassword && (
+                <p
+                  className={`text-sm ${
+                    watchPassword === watchConfirmPassword
+                      ? 'text-green-600'
+                      : 'text-red-600'
+                  }`}
+                >
+                  {watchPassword === watchConfirmPassword
+                    ? 'Passwords match'
+                    : 'Passwords do not match'}
+                </p>
+              )}
+            </div>
+
+            {/* Payment Info */}
+            <div className="space-y-1">
+              <Label>Amount</Label>
+              <Input
+                value="10,000"
+                readOnly
+                className="bg-gray-100 cursor-not-allowed"
+              />
+            </div>
+            <div className="space-y-1">
+              <Label>Gateway Charge</Label>
+              <Input
+                value="400"
+                readOnly
+                className="bg-gray-100 cursor-not-allowed"
+              />
+            </div>
+            <div className="space-y-1">
+              <Label>Total Charge</Label>
+              <Input
+                value="10,400"
+                readOnly
+                className="bg-gray-100 cursor-not-allowed font-semibold"
+              />
             </div>
           </div>
 
-          {/* Payment Info */}
-          <div>
-            <Label>Amount</Label>
-            <Input
-              value="10,000"
-              readOnly
-              className="bg-gray-100 cursor-not-allowed"
-            />
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row justify-between gap-4">
+            <Button className="w-full sm:w-fit" type="submit">
+              Make Payment
+            </Button>
+            <Button
+              className="w-full sm:w-fit"
+              variant="destructive"
+              type="reset"
+            >
+              Reset
+            </Button>
           </div>
-          <div>
-            <Label>Gateway Charge</Label>
-            <Input
-              value="400"
-              readOnly
-              className="bg-gray-100 cursor-not-allowed"
-            />
-          </div>
-          <div>
-            <Label>Total Charge</Label>
-            <Input
-              value="10,400"
-              readOnly
-              className="bg-gray-100 cursor-not-allowed"
-            />
-          </div>
-        </div>
-
-        {/* Buttons */}
-        <div className="flex justify-between gap-4">
-          <Button className="w-full" variant="destructive" type="reset">
-            Reset
-          </Button>
-          <Button className="w-full" type="submit">
-            Make Payment
-          </Button>
-        </div>
+        </form>
       </div>
     </div>
   );

@@ -15,6 +15,7 @@ import {
   SelectItem,
 } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
+import { usePaystackPayment } from 'react-paystack';
 
 type FormData = {
   surname: string;
@@ -28,6 +29,16 @@ type FormData = {
   department: string;
   password: string;
   confirmPassword: string;
+};
+
+type Reference = {
+  message: 'Approved' | 'Declined';
+  redirecturl: string;
+  reference: string;
+  status: 'success' | 'declined';
+  trans: string;
+  transaction: string;
+  trxref: string;
 };
 
 // Department List
@@ -54,23 +65,32 @@ const departments = [
 ];
 
 // Zod schema for validation
-const schema = z.object({
-  surname: z.string().min(1, 'Surname is required'),
-  firstName: z.string().min(1, 'First Name is required'),
-  otherName: z.string(),
-  email: z.string().email('Invalid email address').min(1, 'Email is required'),
-  phone: z.string().min(1, 'Phone number is required'),
-  category: z.string().min(1, 'Category is required'),
-  level: z.string().min(1, 'Level is required'),
-  gender: z.string().min(1, 'Gender is required'),
-  department: z.string().min(1, 'Department is required'),
-  password: z.string().min(1, 'Password is required'),
-  confirmPassword: z.string().min(1, 'Please confirm your password'),
-});
+const schema = z
+  .object({
+    surname: z.string().min(1, 'Surname is required'),
+    firstName: z.string().min(1, 'First Name is required'),
+    otherName: z.string(),
+    email: z
+      .string()
+      .email('Invalid email address')
+      .min(1, 'Email is required'),
+    phone: z.string().min(1, 'Phone number is required'),
+    category: z.string().min(1, 'Category is required'),
+    level: z.string().min(1, 'Level is required'),
+    gender: z.string().min(1, 'Gender is required'),
+    department: z.string().min(1, 'Department is required'),
+    password: z.string().min(1, 'Password is required'),
+    confirmPassword: z.string().min(1, 'Please confirm your password'),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: 'Passwords do not match',
+    path: ['confirmPassword'],
+  });
 
 // Initial form data
 const ApplicationForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY;
 
   const {
     handleSubmit,
@@ -79,6 +99,7 @@ const ApplicationForm = () => {
     watch,
     register,
     formState: { errors },
+    getValues,
   } = useForm({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -96,16 +117,38 @@ const ApplicationForm = () => {
     },
   });
 
+  const config = {
+    reference: new Date().getTime().toString(),
+    email: getValues().email,
+    amount: 1040000, // Amount in kobo
+    metadata: {
+      name: getValues().firstName + ' ' + getValues().surname,
+      phone: getValues().phone,
+    },
+    publicKey: publicKey,
+    onSuccess: (reference: Reference) => {
+      // Implementation for whatever you want to do with reference and after success call.
+      console.log('Success', reference);
+    },
+
+    onClose: () => {
+      // implementation for  whatever you want to do when the Paystack dialog closed.
+      console.log('closed');
+    },
+  };
+  const initializePayment = usePaystackPayment(config);
+
   // Watch for password and confirmPassword to compare
   const watchPassword = watch('password');
   const watchConfirmPassword = watch('confirmPassword');
 
-  const handleFormSubmit = (data: FormData) => {
-    if (data.password === data.confirmPassword) {
-      // Submit logic goes here
-      console.log('Submitted successfully!', data);
+  const handleFormSubmit = () => {
+    const mode = process.env.NEXT_PUBLIC_ENV;
+    if (mode === 'test') {
+      // simulate payment or redirect to test gateway
+      initializePayment(config);
     } else {
-      console.log('Passwords do not match');
+      // proceed with live gateway
     }
   };
 
@@ -115,6 +158,11 @@ const ApplicationForm = () => {
         <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">
           Application Form
         </h1>
+        {process.env.NEXT_PUBLIC_ENV === 'test' && (
+          <div className="text-yellow-600 text-sm text-center">
+            You are in test mode. Payments are not real.
+          </div>
+        )}
 
         <form onSubmit={handleSubmit(handleFormSubmit)} className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -125,7 +173,10 @@ const ApplicationForm = () => {
                 control={control}
                 name="category"
                 render={({ field }) => (
-                  <Select {...field}>
+                  <Select
+                    {...field}
+                    onValueChange={(value) => field.onChange(value)}
+                  >
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select Category" />
                     </SelectTrigger>
@@ -150,7 +201,10 @@ const ApplicationForm = () => {
                 control={control}
                 name="level"
                 render={({ field }) => (
-                  <Select {...field}>
+                  <Select
+                    {...field}
+                    onValueChange={(value) => field.onChange(value)}
+                  >
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select Level" />
                     </SelectTrigger>
@@ -224,7 +278,10 @@ const ApplicationForm = () => {
                 control={control}
                 name="gender"
                 render={({ field }) => (
-                  <Select {...field}>
+                  <Select
+                    {...field}
+                    onValueChange={(value) => field.onChange(value)}
+                  >
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select Gender" />
                     </SelectTrigger>
@@ -247,7 +304,10 @@ const ApplicationForm = () => {
                 control={control}
                 name="department"
                 render={({ field }) => (
-                  <Select {...field}>
+                  <Select
+                    {...field}
+                    onValueChange={(value) => field.onChange(value)}
+                  >
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Choose Department" />
                     </SelectTrigger>

@@ -17,20 +17,6 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import { usePaystackPayment } from 'react-paystack';
 
-type FormData = {
-  surname: string;
-  firstName: string;
-  otherName: string;
-  email: string;
-  phone: string;
-  category: string;
-  level: string;
-  gender: string;
-  department: string;
-  password: string;
-  confirmPassword: string;
-};
-
 type Reference = {
   message: 'Approved' | 'Declined';
   redirecturl: string;
@@ -76,7 +62,7 @@ const schema = z
       .min(1, 'Email is required'),
     phone: z.string().min(1, 'Phone number is required'),
     category: z.string().min(1, 'Category is required'),
-    level: z.string().min(1, 'Level is required'),
+    program: z.string().min(1, 'Program is required'),
     gender: z.string().min(1, 'Gender is required'),
     department: z.string().min(1, 'Department is required'),
     password: z.string().min(1, 'Password is required'),
@@ -109,7 +95,7 @@ const ApplicationForm = () => {
       email: '',
       phone: '',
       category: '',
-      level: '',
+      program: '',
       gender: '',
       department: '',
       password: '',
@@ -194,19 +180,19 @@ const ApplicationForm = () => {
               )}
             </div>
 
-            {/* Level */}
+            {/* Program */}
             <div className="space-y-1">
-              <Label>Level</Label>
+              <Label>Program</Label>
               <Controller
                 control={control}
-                name="level"
+                name="program"
                 render={({ field }) => (
                   <Select
                     {...field}
                     onValueChange={(value) => field.onChange(value)}
                   >
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Select Level" />
+                      <SelectValue placeholder="Select Program" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="ND">National Diploma (ND)</SelectItem>
@@ -217,8 +203,10 @@ const ApplicationForm = () => {
                   </Select>
                 )}
               />
-              {errors.level && (
-                <p className="text-sm text-red-600">{errors.level?.message}</p>
+              {errors.program && (
+                <p className="text-sm text-red-600">
+                  {errors.program?.message}
+                </p>
               )}
             </div>
 

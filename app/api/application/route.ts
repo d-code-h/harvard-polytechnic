@@ -5,6 +5,7 @@ import { drizzle } from 'drizzle-orm/node-postgres';
 import { applicationsTable } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { isLegitTransaction, verifyTransaction } from '@/lib/utils';
+import { hash } from 'bcrypt';
 
 const db = drizzle(process.env.DATABASE_URL!);
 
@@ -37,6 +38,11 @@ export async function POST(request: Request) {
       }
     } else {
       throw new Error('Transaction ID is missing');
+    }
+
+    // Hash the password before storing it in the database
+    if (data.password) {
+      data.password = await hash(data.password, 10);
     }
 
     const res = await db.insert(applicationsTable).values(data).returning({

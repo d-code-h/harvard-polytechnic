@@ -18,7 +18,7 @@ const MobileNav = () => {
   const pathname = usePathname();
 
   return (
-    <div className="md:hidden">
+    <div className="md:hidden print:hidden">
       <Sheet>
         <SheetTrigger>
           <Button variant="ghost" asChild>

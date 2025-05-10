@@ -11,3 +11,19 @@ declare interface PostProps {
   comments: string;
   text: string;
 }
+
+declare interface Application {
+  surname: string;
+  firstName: string;
+  otherName: string;
+  email: string;
+  phone: string;
+  category: 'Full Time' | 'Part Time';
+  program: 'HND' | 'ND';
+  gender: 'Male' | 'Female';
+  department: string;
+  password: string;
+  confirmPassword: string;
+  transactionId?: string;
+  applicationId?: string;
+}

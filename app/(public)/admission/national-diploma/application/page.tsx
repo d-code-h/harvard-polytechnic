@@ -1,4 +1,4 @@
-import ApplicationForm from '@/components/ApplicationForm';
+import ApplicationForm from '@/components/Application';
 import React from 'react';
 
 const NDApplication = () => {

@@ -1,9 +1,4 @@
-'use client';
-
 import React, { useState } from 'react';
-import { useForm, Controller } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
@@ -15,128 +10,41 @@ import {
   SelectItem,
 } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
-import { usePaystackPayment } from 'react-paystack';
+import { departments, initialValues } from '@/lib/data';
+import {
+  Control,
+  Controller,
+  FieldErrors,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from 'react-hook-form';
+// import dynamic from 'next/dynamic';
 
-type Reference = {
-  message: 'Approved' | 'Declined';
-  redirecturl: string;
-  reference: string;
-  status: 'success' | 'declined';
-  trans: string;
-  transaction: string;
-  trxref: string;
-};
+// const PaystackHook = dynamic(
+//   () => import('react-paystack').then((mod) => mod.usePaystackPayment),
+//   { ssr: false },
+// );
 
-// Department List
-const departments = [
-  'Accountancy',
-  'Business Administration and Management',
-  'Computer Engineering',
-  'Computer Science',
-  'Mass Communication',
-  'Public Administration',
-  'Science Laboratory Technology',
-  'Software and Web Development',
-  'Networking and Cloud Computing',
-  'Cybersecurity and Data Protection',
-  'Artificial Intelligence',
-  'Journalism and Media Studies',
-  'Film and Multimedia Production',
-  'Strategic Communication and Media Studies',
-  'Physics/Electronics',
-  'Estate Management',
-  'Statistics',
-  'Electrical and Electronic Engineering',
-  'Biology/Microbiology',
-];
-
-// Zod schema for validation
-const schema = z
-  .object({
-    surname: z.string().min(1, 'Surname is required'),
-    firstName: z.string().min(1, 'First Name is required'),
-    otherName: z.string(),
-    email: z
-      .string()
-      .email('Invalid email address')
-      .min(1, 'Email is required'),
-    phone: z.string().min(1, 'Phone number is required'),
-    category: z.string().min(1, 'Category is required'),
-    program: z.string().min(1, 'Program is required'),
-    gender: z.string().min(1, 'Gender is required'),
-    department: z.string().min(1, 'Department is required'),
-    password: z.string().min(1, 'Password is required'),
-    confirmPassword: z.string().min(1, 'Please confirm your password'),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    message: 'Passwords do not match',
-    path: ['confirmPassword'],
-  });
-
-// Initial form data
-const ApplicationForm = () => {
+const ApplicationForm = ({
+  error,
+  handleFormSubmit,
+  handleSubmit,
+  control,
+  register,
+  errors,
+  watchPassword,
+  watchConfirmPassword,
+}: {
+  handleSubmit: UseFormHandleSubmit<typeof initialValues>;
+  control: Control<typeof initialValues>;
+  register: UseFormRegister<typeof initialValues>;
+  errors: FieldErrors<typeof initialValues>;
+  error: null | string;
+  handleFormSubmit: () => void;
+  watchPassword: string;
+  watchConfirmPassword: string;
+}) => {
   const [showPassword, setShowPassword] = useState(false);
-  const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY;
-
-  const {
-    handleSubmit,
-    control,
-    // setValue,
-    watch,
-    register,
-    formState: { errors },
-    getValues,
-  } = useForm({
-    resolver: zodResolver(schema),
-    defaultValues: {
-      surname: '',
-      firstName: '',
-      otherName: '',
-      email: '',
-      phone: '',
-      category: '',
-      program: '',
-      gender: '',
-      department: '',
-      password: '',
-      confirmPassword: '',
-    },
-  });
-
-  const config = {
-    reference: new Date().getTime().toString(),
-    email: getValues().email,
-    amount: 1040000, // Amount in kobo
-    metadata: {
-      name: getValues().firstName + ' ' + getValues().surname,
-      phone: getValues().phone,
-    },
-    publicKey: publicKey,
-    onSuccess: (reference: Reference) => {
-      // Implementation for whatever you want to do with reference and after success call.
-      console.log('Success', reference);
-    },
-
-    onClose: () => {
-      // implementation for  whatever you want to do when the Paystack dialog closed.
-      console.log('closed');
-    },
-  };
-  const initializePayment = usePaystackPayment(config);
-
-  // Watch for password and confirmPassword to compare
-  const watchPassword = watch('password');
-  const watchConfirmPassword = watch('confirmPassword');
-
-  const handleFormSubmit = () => {
-    const mode = process.env.NEXT_PUBLIC_ENV;
-    if (mode === 'test') {
-      // simulate payment or redirect to test gateway
-      initializePayment(config);
-    } else {
-      // proceed with live gateway
-    }
-  };
 
   return (
     <div className="min-h-screen px-4 py-10 flex justify-center bg-gray-50">
@@ -144,10 +52,9 @@ const ApplicationForm = () => {
         <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">
           Application Form
         </h1>
-        {process.env.NEXT_PUBLIC_ENV === 'test' && (
-          <div className="text-yellow-600 text-sm text-center">
-            You are in test mode. Payments are not real.
-          </div>
+
+        {error && (
+          <div className="text-red-600 text-sm text-center">{error}</div>
         )}
 
         <form onSubmit={handleSubmit(handleFormSubmit)} className="space-y-6">
